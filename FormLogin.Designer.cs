@@ -71,6 +71,7 @@
             this.linkLb_reg.TabIndex = 3;
             this.linkLb_reg.TabStop = true;
             this.linkLb_reg.Text = "Я не зарегистрирован";
+            this.linkLb_reg.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLb_reg_LinkClicked);
             // 
             // label1
             // 

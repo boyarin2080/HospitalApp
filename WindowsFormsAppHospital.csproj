@@ -46,11 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormDoctorList.cs">
+    <Compile Include="FormDoctorSchedule.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDoctorList.Designer.cs">
-      <DependentUpon>FormDoctorList.cs</DependentUpon>
+    <Compile Include="FormDoctorSchedule.Designer.cs">
+      <DependentUpon>FormDoctorSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReg.Designer.cs">
+      <DependentUpon>FormReg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSpecList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSpecList.Designer.cs">
+      <DependentUpon>FormSpecList.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
@@ -65,8 +77,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>shamin_hospitalDataSet.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FormDoctorList.resx">
-      <DependentUpon>FormDoctorList.cs</DependentUpon>
+    <EmbeddedResource Include="FormDoctorSchedule.resx">
+      <DependentUpon>FormDoctorSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReg.resx">
+      <DependentUpon>FormReg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSpecList.resx">
+      <DependentUpon>FormSpecList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>

@@ -43,7 +43,7 @@ namespace WindowsFormsAppHospital
                 role = Convert.ToInt32(reader["role_id"].ToString());
 
                 string db_username = reader["name"].ToString();
-                FormDoctorList form = new FormDoctorList(role, db_username);
+                FormSpecList form = new FormSpecList(role, db_username);
                 this.Hide();
                 form.ShowDialog();
                 this.Close();
@@ -56,6 +56,14 @@ namespace WindowsFormsAppHospital
             }
 
             conn.Close();
+        }
+
+        private void linkLb_reg_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FormReg form = new FormReg();
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
         }
     }
 }

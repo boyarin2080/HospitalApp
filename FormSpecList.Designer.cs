@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsAppHospital
 {
-    partial class FormDoctorList
+    partial class FormSpecList
     {
         /// <summary>
         /// Required designer variable.
@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             this.lb_hello = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cb_choose_spec = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.button_choose_doc = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lb_hello
@@ -43,33 +44,45 @@
             this.lb_hello.Text = "Здравствуйте, ";
             this.lb_hello.UseCompatibleTextRendering = true;
             // 
-            // comboBox1
+            // cb_choose_spec
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 83);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(165, 24);
-            this.comboBox1.TabIndex = 2;
+            this.cb_choose_spec.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_choose_spec.FormattingEnabled = true;
+            this.cb_choose_spec.Location = new System.Drawing.Point(172, 181);
+            this.cb_choose_spec.Name = "cb_choose_spec";
+            this.cb_choose_spec.Size = new System.Drawing.Size(263, 24);
+            this.cb_choose_spec.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 64);
+            this.label1.Location = new System.Drawing.Point(169, 131);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(95, 16);
             this.label1.TabIndex = 3;
             this.label1.Text = "Выбор врача:";
             // 
-            // FormDoctorList
+            // button_choose_doc
+            // 
+            this.button_choose_doc.Location = new System.Drawing.Point(172, 297);
+            this.button_choose_doc.Name = "button_choose_doc";
+            this.button_choose_doc.Size = new System.Drawing.Size(263, 59);
+            this.button_choose_doc.TabIndex = 4;
+            this.button_choose_doc.Text = "Далее";
+            this.button_choose_doc.UseVisualStyleBackColor = true;
+            this.button_choose_doc.Click += new System.EventHandler(this.button_choose_doc_Click);
+            // 
+            // FormSpecList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(629, 478);
+            this.Controls.Add(this.button_choose_doc);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cb_choose_spec);
             this.Controls.Add(this.lb_hello);
-            this.Name = "FormDoctorList";
-            this.Text = "FormDoctorList";
+            this.Name = "FormSpecList";
+            this.Text = "FormSpecList";
             this.Load += new System.EventHandler(this.FormDoctorList_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -79,7 +92,8 @@
         #endregion
 
         private System.Windows.Forms.Label lb_hello;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cb_choose_spec;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button_choose_doc;
     }
 }
