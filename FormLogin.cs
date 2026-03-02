@@ -44,9 +44,12 @@ namespace WindowsFormsAppHospital
                 role = Convert.ToInt32(reader["role_id"].ToString());
                 user_id = Convert.ToInt32(reader["user_id"].ToString());
                 string db_username = reader["name"].ToString();
-                FormSpecList form = new FormSpecList(role, db_username);
                 public_vars pv = new public_vars();
                 pv.user_id = user_id;
+
+                FormSpecList form = new FormSpecList(role, db_username, pv);
+
+                //MessageBox.Show($"{pv.user_id} and uid: {user_id}");
                 this.Hide();
                 form.ShowDialog();
                 this.Close();

@@ -34,24 +34,32 @@ namespace WindowsFormsAppHospital
                 MessageBox.Show("Неверный формат даты");
             }
 
-            DialogResult result = MessageBox.Show($"Запись на время: {pv1.appointment_datetime} \nВрач: {pv1.doctor_fio} \n doctor_id = {pv1.doctor_id} ?", "Подтверждение записи", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show($"Запись на время: {pv1.appointment_datetime} \nВрач: {pv1.doctor_fio} \ndoctor_id = {pv1.doctor_id} \npatient_id = {pv1.user_id}?", "Подтверждение записи", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (result == DialogResult.OK)
             {
-                SqlCommand cmd = new SqlCommand("CreateAppointment", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
+                try
+                {
+                    {
+                        conn.Open();
 
-                // Явно указываем типы и преобразуем значения
-                cmd.Parameters.Add("@patient_id", SqlDbType.Int).Value = Convert.ToInt32(pv1.user_id);
-                cmd.Parameters.Add("@doctor_id", SqlDbType.Int).Value = Convert.ToInt32(pv1.doctor_id);
-                cmd.Parameters.Add("@appointment_datetime", SqlDbType.DateTime).Value = app_DT;
-                cmd.Parameters.Add("@complaint", SqlDbType.NVarChar, 500).Value = richTextBox1.Text;
+                        SqlCommand cmd = new SqlCommand("CreateAppointment", conn);
+                        cmd.CommandType = CommandType.StoredProcedure;
 
-                conn.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-                conn.Close();
+                        // Явно указываем типы данных
+                        cmd.Parameters.Add("@patient_id", SqlDbType.Int).Value = pv1.user_id;
+                        cmd.Parameters.Add("@doctor_id", SqlDbType.Int).Value = pv1.doctor_id;
+                        cmd.Parameters.Add("@appointment_datetime", SqlDbType.DateTime).Value = app_DT;
+                        cmd.Parameters.Add("@complaint", SqlDbType.NVarChar, -1).Value = richTextBox1.Text;
 
-                this.Close();
-                MessageBox.Show("success");
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("✅ Запись создана!");
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show($"❌ Ошибка: {ex.Message}\nPatientID: {pv1.user_id}\nDoctorID: {pv1.doctor_id}");
+                }
+
             }
             else if (result == DialogResult.Cancel)
             {

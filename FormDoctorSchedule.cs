@@ -17,21 +17,20 @@ namespace WindowsFormsAppHospital
         string doctor_hospital;
         int spec_Id;
         int hosp_Id;
+        HashSet<DateTime> busyTimes;
+
         //для передачи в CreateAppointment
         public_vars pv;
 
         SqlConnection conn = new SqlConnection(Properties.Settings.Default.shamin_hospitalConnectionString);
-        public FormDoctorSchedule(string speciality, string hospital, int spec_id, int hosp_id)
+        public FormDoctorSchedule(string speciality, string hospital, int spec_id, int hosp_id, public_vars pv)
         {
             InitializeComponent();
             doctor_spec = speciality;
             doctor_hospital = hospital;
             spec_Id = spec_id;
             hosp_Id = hosp_id;
-            pv = new public_vars();
-
-
-
+            this.pv = pv;
         }
         public static class DaysOfWeek
         {
@@ -46,7 +45,6 @@ namespace WindowsFormsAppHospital
                 { "Sunday", 7 }
             };
         }
-
 
         private void Load_Doctors_list()
         {
@@ -161,22 +159,49 @@ namespace WindowsFormsAppHospital
 
             dgv_doctor_schedule.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgv_doctor_schedule.RowHeadersVisible = false;
-            
         }
 
 
+        private HashSet<DateTime> LoadAppointmentsByDay(DateTime selectedDate, int doctor_id)
+        {
+            HashSet<DateTime> busyTimes = new HashSet<DateTime>();
+            {
+                SqlCommand cmd = new SqlCommand("GetAppointmentsTimesByDay", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@selectedDate", SqlDbType.Date).Value = selectedDate.Date;
+                cmd.Parameters.Add("@doctor_id", SqlDbType.Int).Value = doctor_id;
+
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    busyTimes.Add((DateTime)reader["appointment_datetime"]);
+                }
+                reader.Close();
+                conn.Close();
+                string times = string.Join("\n", busyTimes.Select(t => t.ToString("HH:mm")));
+                MessageBox.Show($"Занятые времена:\n{times}");
+            }
+
+            return busyTimes;
+        }
 
         private void FormDoctorSchedule_Load(object sender, EventArgs e)
         {
             Load_Doctors_list();
+            //dtp_schedule_date.MinDate = DateTime.Now;
         }
 
         private void btn_search_Click(object sender, EventArgs e)
         {
-            LoadSchedule();
             pv.doctor_fio = cb_doctor_fio.Text;
             pv.doctor_id = Convert.ToInt32(cb_doctor_fio.SelectedValue);
 
+            //Подгрузка записей которые уже есть у этого врача
+            LoadAppointmentsByDay(dtp_schedule_date.Value.Date, pv.doctor_id);
+            //Загрузка DGV
+            LoadSchedule();
         }
 
         private void dgv_doctor_schedule_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)

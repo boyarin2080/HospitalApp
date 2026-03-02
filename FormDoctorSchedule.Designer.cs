@@ -46,9 +46,10 @@
             // splitter1
             // 
             this.splitter1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitter1.Location = new System.Drawing.Point(0, 608);
+            this.splitter1.Location = new System.Drawing.Point(0, 494);
+            this.splitter1.Margin = new System.Windows.Forms.Padding(2);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(1086, 3);
+            this.splitter1.Size = new System.Drawing.Size(814, 2);
             this.splitter1.TabIndex = 7;
             this.splitter1.TabStop = false;
             // 
@@ -57,12 +58,13 @@
             this.dgv_doctor_schedule.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv_doctor_schedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_doctor_schedule.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgv_doctor_schedule.Location = new System.Drawing.Point(0, 144);
+            this.dgv_doctor_schedule.Location = new System.Drawing.Point(0, 117);
+            this.dgv_doctor_schedule.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_doctor_schedule.Name = "dgv_doctor_schedule";
             this.dgv_doctor_schedule.ReadOnly = true;
             this.dgv_doctor_schedule.RowHeadersWidth = 51;
             this.dgv_doctor_schedule.RowTemplate.Height = 24;
-            this.dgv_doctor_schedule.Size = new System.Drawing.Size(1086, 464);
+            this.dgv_doctor_schedule.Size = new System.Drawing.Size(814, 377);
             this.dgv_doctor_schedule.TabIndex = 8;
             this.dgv_doctor_schedule.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_doctor_schedule_CellMouseClick);
             this.dgv_doctor_schedule.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgv_doctor_schedule_CellPainting);
@@ -75,15 +77,17 @@
             this.panel1.Controls.Add(this.lbl_specandhosp);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1086, 144);
+            this.panel1.Size = new System.Drawing.Size(814, 117);
             this.panel1.TabIndex = 9;
             // 
             // btn_search
             // 
-            this.btn_search.Location = new System.Drawing.Point(323, 35);
+            this.btn_search.Location = new System.Drawing.Point(242, 28);
+            this.btn_search.Margin = new System.Windows.Forms.Padding(2);
             this.btn_search.Name = "btn_search";
-            this.btn_search.Size = new System.Drawing.Size(133, 61);
+            this.btn_search.Size = new System.Drawing.Size(100, 50);
             this.btn_search.TabIndex = 7;
             this.btn_search.Text = "Поиск";
             this.btn_search.UseVisualStyleBackColor = true;
@@ -92,24 +96,27 @@
             // cb_doctor_fio
             // 
             this.cb_doctor_fio.FormattingEnabled = true;
-            this.cb_doctor_fio.Location = new System.Drawing.Point(65, 63);
+            this.cb_doctor_fio.Location = new System.Drawing.Point(49, 51);
+            this.cb_doctor_fio.Margin = new System.Windows.Forms.Padding(2);
             this.cb_doctor_fio.Name = "cb_doctor_fio";
-            this.cb_doctor_fio.Size = new System.Drawing.Size(212, 24);
+            this.cb_doctor_fio.Size = new System.Drawing.Size(160, 21);
             this.cb_doctor_fio.TabIndex = 6;
             // 
             // dtp_schedule_date
             // 
-            this.dtp_schedule_date.Location = new System.Drawing.Point(791, 52);
+            this.dtp_schedule_date.Location = new System.Drawing.Point(593, 42);
+            this.dtp_schedule_date.Margin = new System.Windows.Forms.Padding(2);
             this.dtp_schedule_date.Name = "dtp_schedule_date";
-            this.dtp_schedule_date.Size = new System.Drawing.Size(188, 22);
+            this.dtp_schedule_date.Size = new System.Drawing.Size(142, 20);
             this.dtp_schedule_date.TabIndex = 5;
             // 
             // lbl_specandhosp
             // 
             this.lbl_specandhosp.AutoSize = true;
-            this.lbl_specandhosp.Location = new System.Drawing.Point(62, 29);
+            this.lbl_specandhosp.Location = new System.Drawing.Point(46, 24);
+            this.lbl_specandhosp.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_specandhosp.Name = "lbl_specandhosp";
-            this.lbl_specandhosp.Size = new System.Drawing.Size(154, 16);
+            this.lbl_specandhosp.Size = new System.Drawing.Size(121, 13);
             this.lbl_specandhosp.TabIndex = 4;
             this.lbl_specandhosp.Text = "Врачи по параметрам:";
             // 
@@ -119,23 +126,24 @@
             this.cms_create_appointment.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.записатьсяToolStripMenuItem});
             this.cms_create_appointment.Name = "cms_create_appointment";
-            this.cms_create_appointment.Size = new System.Drawing.Size(157, 28);
+            this.cms_create_appointment.Size = new System.Drawing.Size(137, 26);
             // 
             // записатьсяToolStripMenuItem
             // 
             this.записатьсяToolStripMenuItem.Name = "записатьсяToolStripMenuItem";
-            this.записатьсяToolStripMenuItem.Size = new System.Drawing.Size(156, 24);
+            this.записатьсяToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.записатьсяToolStripMenuItem.Text = "Записаться";
             this.записатьсяToolStripMenuItem.Click += new System.EventHandler(this.записатьсяToolStripMenuItem_Click);
             // 
             // FormDoctorSchedule
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1086, 611);
+            this.ClientSize = new System.Drawing.Size(814, 496);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgv_doctor_schedule);
             this.Controls.Add(this.splitter1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormDoctorSchedule";
             this.Text = "FormDoctorSchedule";
             this.Load += new System.EventHandler(this.FormDoctorSchedule_Load);

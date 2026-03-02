@@ -16,14 +16,15 @@ namespace WindowsFormsAppHospital
     {
         int role;
         string username;
-
+        public_vars pv;
 
         SqlConnection conn = new SqlConnection(Properties.Settings.Default.shamin_hospitalConnectionString);
-        public FormSpecList(int role_id, string db_username)
+        public FormSpecList(int role_id, string db_username, public_vars pv)
         {
             InitializeComponent();
             role = role_id;
             username = db_username;
+            this.pv = pv;
         }
 
 
@@ -63,7 +64,7 @@ namespace WindowsFormsAppHospital
             int hosp_id = Convert.ToInt32(cb_hospital_choose.SelectedValue);
 
 
-            FormDoctorSchedule form = new FormDoctorSchedule(speciality, hospital, spec_id, hosp_id);
+            FormDoctorSchedule form = new FormDoctorSchedule(speciality, hospital, spec_id, hosp_id, pv);
             this.Hide();
             form.ShowDialog();
             this.Close();
