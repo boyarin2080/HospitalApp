@@ -34,6 +34,8 @@
             this.button_choose_doc = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.cb_hospital_choose = new System.Windows.Forms.ComboBox();
+            this.shamin_hospitalDataSet1 = new WindowsFormsAppHospital.shamin_hospitalDataSet();
+            ((System.ComponentModel.ISupportInitialize)(this.shamin_hospitalDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // lb_hello
@@ -50,15 +52,15 @@
             // 
             this.cb_choose_spec.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_choose_spec.FormattingEnabled = true;
-            this.cb_choose_spec.Location = new System.Drawing.Point(31, 186);
+            this.cb_choose_spec.Location = new System.Drawing.Point(83, 208);
             this.cb_choose_spec.Name = "cb_choose_spec";
-            this.cb_choose_spec.Size = new System.Drawing.Size(228, 24);
+            this.cb_choose_spec.Size = new System.Drawing.Size(264, 24);
             this.cb_choose_spec.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(28, 167);
+            this.label1.Location = new System.Drawing.Point(80, 189);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(95, 16);
             this.label1.TabIndex = 3;
@@ -66,7 +68,7 @@
             // 
             // button_choose_doc
             // 
-            this.button_choose_doc.Location = new System.Drawing.Point(172, 297);
+            this.button_choose_doc.Location = new System.Drawing.Point(84, 320);
             this.button_choose_doc.Name = "button_choose_doc";
             this.button_choose_doc.Size = new System.Drawing.Size(263, 59);
             this.button_choose_doc.TabIndex = 4;
@@ -77,7 +79,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(28, 91);
+            this.label2.Location = new System.Drawing.Point(80, 113);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 16);
             this.label2.TabIndex = 6;
@@ -87,16 +89,21 @@
             // 
             this.cb_hospital_choose.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_hospital_choose.FormattingEnabled = true;
-            this.cb_hospital_choose.Location = new System.Drawing.Point(32, 110);
+            this.cb_hospital_choose.Location = new System.Drawing.Point(84, 132);
             this.cb_hospital_choose.Name = "cb_hospital_choose";
-            this.cb_hospital_choose.Size = new System.Drawing.Size(228, 24);
+            this.cb_hospital_choose.Size = new System.Drawing.Size(263, 24);
             this.cb_hospital_choose.TabIndex = 5;
+            // 
+            // shamin_hospitalDataSet1
+            // 
+            this.shamin_hospitalDataSet1.DataSetName = "shamin_hospitalDataSet";
+            this.shamin_hospitalDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // FormSpecList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(629, 478);
+            this.ClientSize = new System.Drawing.Size(456, 502);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cb_hospital_choose);
             this.Controls.Add(this.button_choose_doc);
@@ -106,6 +113,7 @@
             this.Name = "FormSpecList";
             this.Text = "FormSpecList";
             this.Load += new System.EventHandler(this.FormDoctorList_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.shamin_hospitalDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -119,5 +127,6 @@
         private System.Windows.Forms.Button button_choose_doc;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cb_hospital_choose;
+        private shamin_hospitalDataSet shamin_hospitalDataSet1;
     }
 }

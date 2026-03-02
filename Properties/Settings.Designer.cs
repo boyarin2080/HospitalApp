@@ -33,5 +33,17 @@ namespace WindowsFormsAppHospital.Properties {
                 return ((string)(this["shamin_hospitalConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int user_id {
+            get {
+                return ((int)(this["user_id"]));
+            }
+            set {
+                this["user_id"] = value;
+            }
+        }
     }
 }

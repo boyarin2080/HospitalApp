@@ -13,6 +13,7 @@ namespace WindowsFormsAppHospital
 {
     public partial class FormLogin : Form
     {
+        int user_id;
         SqlConnection conn = new SqlConnection(Properties.Settings.Default.shamin_hospitalConnectionString);
         public FormLogin()
         {
@@ -41,9 +42,11 @@ namespace WindowsFormsAppHospital
             if (reader.HasRows)
             {
                 role = Convert.ToInt32(reader["role_id"].ToString());
-
+                user_id = Convert.ToInt32(reader["user_id"].ToString());
                 string db_username = reader["name"].ToString();
                 FormSpecList form = new FormSpecList(role, db_username);
+                public_vars pv = new public_vars();
+                pv.user_id = user_id;
                 this.Hide();
                 form.ShowDialog();
                 this.Close();
