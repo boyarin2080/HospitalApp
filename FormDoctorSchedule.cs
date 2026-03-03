@@ -78,9 +78,33 @@ namespace WindowsFormsAppHospital
 
             return timeSlots;
         }
+        private HashSet<string> ConvertDateTimesToStrings(HashSet<DateTime> busyTimes)
+        {
+            var times = new HashSet<string>();
+
+            if (busyTimes == null)
+            {
+                return times;
+            }
+                
+
+            foreach (DateTime dt in busyTimes)
+            {
+                // Форматируем в строку времени (HH:mm) или полную дату по вашему выбору
+                string timeString = dt.ToString("HH:mm"); // Только время
+                                                          // string timeString = dt.ToString("dd.MM.yyyy HH:mm"); // Полная дата+время
+
+                times.Add(timeString);
+            }
+
+            return times;
+        }
 
         private void FillDGV(List<string> slots, string week_day)
         {
+            HashSet<string> Times = ConvertDateTimesToStrings(busyTimes);
+            string times = string.Join("\n", Times);
+            //MessageBox.Show($"Занятые времена FILLDGV:\n{Convert.ToString(times)}");
             try
             {
                 DataTable dtSlots = new DataTable();
@@ -90,7 +114,7 @@ namespace WindowsFormsAppHospital
                 // Создаём 10 столбцов
                 for (int i = 0; i < maxPerRow; i++)
                 {
-                    dtSlots.Columns.Add($"TimeSlot {i + 1}" , typeof(string));
+                    dtSlots.Columns.Add($"TimeSlot {i + 1}", typeof(string));
                 }
 
                 // Заполняем построчно
@@ -122,16 +146,31 @@ namespace WindowsFormsAppHospital
                 dgv_doctor_schedule.ColumnHeadersVisible = false;
                 dgv_doctor_schedule.AllowUserToAddRows = false;
 
+                for (int rowIndex = 0; rowIndex < numRows; rowIndex++)
+                {
+                    for (int colIndex = 0; colIndex < maxPerRow; colIndex++)
+                    {
+
+                        if (Times.Contains(dgv_doctor_schedule.Rows[rowIndex].Cells[colIndex].Value.ToString()))
+                        {
+                            dgv_doctor_schedule.Rows[rowIndex].Cells[colIndex].Style.BackColor = Color.Red;
+                            dgv_doctor_schedule.Rows[rowIndex].Cells[colIndex].ReadOnly = true;
+                            dgv_doctor_schedule.Rows[rowIndex].Cells[colIndex].Selected = false;
+                        }
+                    }
+                }
             }
-            catch(Exception Ex)
+            catch (Exception Ex)
             {
-                MessageBox.Show(Convert.ToString(Ex));
+                string message = Ex.Message + "\n\nНажмите OK для копирования в буфер обмена";
+                MessageBox.Show(message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Clipboard.SetText(Ex.Message); // Копирует только сообщение, без инструкции
             }
         }
 
         private void LoadSchedule()
         {
-            string query =$"SELECT * FROM vw_doctorschedulegrid where doctor_id = {cb_doctor_fio.SelectedValue} and day_of_week = {DaysOfWeek.Days[Convert.ToString(dtp_schedule_date.Value.DayOfWeek)]}";
+            string query = $"SELECT * FROM vw_doctorschedulegrid where doctor_id = {cb_doctor_fio.SelectedValue} and day_of_week = {DaysOfWeek.Days[Convert.ToString(dtp_schedule_date.Value.DayOfWeek)]}";
             SqlDataAdapter da = new SqlDataAdapter(query, conn);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -153,7 +192,7 @@ namespace WindowsFormsAppHospital
             if (dt.Rows.Count == 0)
             {
                 MessageBox.Show($"Не найдено, doctor_id: {cb_doctor_fio.SelectedValue}");
-                
+
             }
 
 
@@ -161,12 +200,12 @@ namespace WindowsFormsAppHospital
             dgv_doctor_schedule.RowHeadersVisible = false;
         }
 
-
         private HashSet<DateTime> LoadAppointmentsByDay(DateTime selectedDate, int doctor_id)
         {
             HashSet<DateTime> busyTimes = new HashSet<DateTime>();
             {
                 SqlCommand cmd = new SqlCommand("GetAppointmentsTimesByDay", conn);
+
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("@selectedDate", SqlDbType.Date).Value = selectedDate.Date;
                 cmd.Parameters.Add("@doctor_id", SqlDbType.Int).Value = doctor_id;
@@ -180,8 +219,8 @@ namespace WindowsFormsAppHospital
                 }
                 reader.Close();
                 conn.Close();
-                string times = string.Join("\n", busyTimes.Select(t => t.ToString("HH:mm")));
-                MessageBox.Show($"Занятые времена:\n{times}");
+                string times = string.Join("\n", busyTimes.Select(t => t.ToString()));
+               //MessageBox.Show($"Занятые времена:\n{times}");
             }
 
             return busyTimes;
@@ -199,7 +238,8 @@ namespace WindowsFormsAppHospital
             pv.doctor_id = Convert.ToInt32(cb_doctor_fio.SelectedValue);
 
             //Подгрузка записей которые уже есть у этого врача
-            LoadAppointmentsByDay(dtp_schedule_date.Value.Date, pv.doctor_id);
+            //string date_dots = dtp_schedule_date.Value.Date.ToString("dd.MM.yyyy 00:00:00");
+            busyTimes = LoadAppointmentsByDay(dtp_schedule_date.Value.Date, pv.doctor_id);
             //Загрузка DGV
             LoadSchedule();
         }
