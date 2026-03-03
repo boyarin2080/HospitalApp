@@ -145,6 +145,7 @@ namespace WindowsFormsAppHospital
                 dgv_doctor_schedule.RowHeadersVisible = false;
                 dgv_doctor_schedule.ColumnHeadersVisible = false;
                 dgv_doctor_schedule.AllowUserToAddRows = false;
+                dgv_doctor_schedule.DefaultCellStyle.BackColor = Color.FromArgb(192, 255, 192);
 
                 for (int rowIndex = 0; rowIndex < numRows; rowIndex++)
                 {
@@ -244,11 +245,6 @@ namespace WindowsFormsAppHospital
             LoadSchedule();
         }
 
-        private void dgv_doctor_schedule_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
-        {
-
-        }
-
         private void записатьсяToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form form = new FormCreateAppointment(pv);
@@ -257,6 +253,16 @@ namespace WindowsFormsAppHospital
 
         private void dgv_doctor_schedule_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            if (dgv_doctor_schedule.CurrentCell.Style.BackColor == Color.Red)
+            {
+                MessageBox.Show("На это время уже есть запись!!! \nВыберите другое", "Время занято");
+                return;
+            }
+            if (dgv_doctor_schedule.CurrentCell.Value == DBNull.Value)
+            {
+                MessageBox.Show("На это время невозможно записаться!!! \nВыберите другое");
+                return;
+            }
             if (e.Button == MouseButtons.Right)
                 if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
                 {

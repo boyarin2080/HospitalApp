@@ -56,6 +56,7 @@
             // dgv_doctor_schedule
             // 
             this.dgv_doctor_schedule.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgv_doctor_schedule.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgv_doctor_schedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_doctor_schedule.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgv_doctor_schedule.Location = new System.Drawing.Point(0, 117);
@@ -67,7 +68,6 @@
             this.dgv_doctor_schedule.Size = new System.Drawing.Size(814, 377);
             this.dgv_doctor_schedule.TabIndex = 8;
             this.dgv_doctor_schedule.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_doctor_schedule_CellMouseClick);
-            this.dgv_doctor_schedule.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgv_doctor_schedule_CellPainting);
             // 
             // panel1
             // 
@@ -139,6 +139,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightCyan;
             this.ClientSize = new System.Drawing.Size(814, 496);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgv_doctor_schedule);

@@ -38,9 +38,10 @@
             // 
             // btn_login
             // 
-            this.btn_login.Location = new System.Drawing.Point(124, 247);
+            this.btn_login.Location = new System.Drawing.Point(93, 201);
+            this.btn_login.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_login.Name = "btn_login";
-            this.btn_login.Size = new System.Drawing.Size(206, 78);
+            this.btn_login.Size = new System.Drawing.Size(154, 63);
             this.btn_login.TabIndex = 0;
             this.btn_login.Text = "Авторизоваться";
             this.btn_login.UseVisualStyleBackColor = true;
@@ -48,26 +49,29 @@
             // 
             // tb_password
             // 
-            this.tb_password.Location = new System.Drawing.Point(121, 198);
+            this.tb_password.Location = new System.Drawing.Point(91, 161);
+            this.tb_password.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tb_password.Name = "tb_password";
-            this.tb_password.Size = new System.Drawing.Size(206, 22);
+            this.tb_password.Size = new System.Drawing.Size(156, 20);
             this.tb_password.TabIndex = 1;
             this.tb_password.Text = "qwerty";
             // 
             // tb_login
             // 
-            this.tb_login.Location = new System.Drawing.Point(124, 138);
+            this.tb_login.Location = new System.Drawing.Point(93, 112);
+            this.tb_login.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tb_login.Name = "tb_login";
-            this.tb_login.Size = new System.Drawing.Size(206, 22);
+            this.tb_login.Size = new System.Drawing.Size(156, 20);
             this.tb_login.TabIndex = 2;
             this.tb_login.Text = "user@mail.ru";
             // 
             // linkLb_reg
             // 
             this.linkLb_reg.AutoSize = true;
-            this.linkLb_reg.Location = new System.Drawing.Point(150, 343);
+            this.linkLb_reg.Location = new System.Drawing.Point(112, 279);
+            this.linkLb_reg.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLb_reg.Name = "linkLb_reg";
-            this.linkLb_reg.Size = new System.Drawing.Size(155, 16);
+            this.linkLb_reg.Size = new System.Drawing.Size(121, 13);
             this.linkLb_reg.TabIndex = 3;
             this.linkLb_reg.TabStop = true;
             this.linkLb_reg.Text = "Я не зарегистрирован";
@@ -76,33 +80,36 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(124, 116);
+            this.label1.Location = new System.Drawing.Point(93, 94);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 16);
+            this.label1.Size = new System.Drawing.Size(71, 13);
             this.label1.TabIndex = 4;
             this.label1.Text = "Логин (email)";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(121, 179);
+            this.label2.Location = new System.Drawing.Point(91, 145);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 16);
+            this.label2.Size = new System.Drawing.Size(45, 13);
             this.label2.TabIndex = 5;
             this.label2.Text = "Пароль";
             // 
             // FormLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(442, 487);
+            this.BackColor = System.Drawing.Color.LightCyan;
+            this.ClientSize = new System.Drawing.Size(332, 396);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.linkLb_reg);
             this.Controls.Add(this.tb_login);
             this.Controls.Add(this.tb_password);
             this.Controls.Add(this.btn_login);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormLogin";
             this.Text = "Login";
             this.ResumeLayout(false);

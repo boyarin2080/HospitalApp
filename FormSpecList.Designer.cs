@@ -41,9 +41,10 @@
             // lb_hello
             // 
             this.lb_hello.AutoSize = true;
-            this.lb_hello.Location = new System.Drawing.Point(12, 9);
+            this.lb_hello.Location = new System.Drawing.Point(9, 7);
+            this.lb_hello.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_hello.Name = "lb_hello";
-            this.lb_hello.Size = new System.Drawing.Size(98, 20);
+            this.lb_hello.Size = new System.Drawing.Size(83, 17);
             this.lb_hello.TabIndex = 0;
             this.lb_hello.Text = "Здравствуйте, ";
             this.lb_hello.UseCompatibleTextRendering = true;
@@ -52,25 +53,28 @@
             // 
             this.cb_choose_spec.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_choose_spec.FormattingEnabled = true;
-            this.cb_choose_spec.Location = new System.Drawing.Point(83, 208);
+            this.cb_choose_spec.Location = new System.Drawing.Point(62, 169);
+            this.cb_choose_spec.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cb_choose_spec.Name = "cb_choose_spec";
-            this.cb_choose_spec.Size = new System.Drawing.Size(264, 24);
+            this.cb_choose_spec.Size = new System.Drawing.Size(199, 21);
             this.cb_choose_spec.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(80, 189);
+            this.label1.Location = new System.Drawing.Point(60, 154);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 16);
+            this.label1.Size = new System.Drawing.Size(75, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Выбор врача:";
             // 
             // button_choose_doc
             // 
-            this.button_choose_doc.Location = new System.Drawing.Point(84, 320);
+            this.button_choose_doc.Location = new System.Drawing.Point(63, 260);
+            this.button_choose_doc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_choose_doc.Name = "button_choose_doc";
-            this.button_choose_doc.Size = new System.Drawing.Size(263, 59);
+            this.button_choose_doc.Size = new System.Drawing.Size(197, 48);
             this.button_choose_doc.TabIndex = 4;
             this.button_choose_doc.Text = "Далее";
             this.button_choose_doc.UseVisualStyleBackColor = true;
@@ -79,9 +83,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(80, 113);
+            this.label2.Location = new System.Drawing.Point(60, 92);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 16);
+            this.label2.Size = new System.Drawing.Size(62, 13);
             this.label2.TabIndex = 6;
             this.label2.Text = "Отделение";
             // 
@@ -89,9 +94,10 @@
             // 
             this.cb_hospital_choose.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_hospital_choose.FormattingEnabled = true;
-            this.cb_hospital_choose.Location = new System.Drawing.Point(84, 132);
+            this.cb_hospital_choose.Location = new System.Drawing.Point(63, 107);
+            this.cb_hospital_choose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cb_hospital_choose.Name = "cb_hospital_choose";
-            this.cb_hospital_choose.Size = new System.Drawing.Size(263, 24);
+            this.cb_hospital_choose.Size = new System.Drawing.Size(198, 21);
             this.cb_hospital_choose.TabIndex = 5;
             // 
             // shamin_hospitalDataSet1
@@ -101,15 +107,17 @@
             // 
             // FormSpecList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(456, 502);
+            this.BackColor = System.Drawing.Color.LightCyan;
+            this.ClientSize = new System.Drawing.Size(342, 408);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cb_hospital_choose);
             this.Controls.Add(this.button_choose_doc);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cb_choose_spec);
             this.Controls.Add(this.lb_hello);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormSpecList";
             this.Text = "FormSpecList";
             this.Load += new System.EventHandler(this.FormDoctorList_Load);
