@@ -27,7 +27,7 @@ namespace WindowsFormsAppHospital
             string format = "yyyy-MM-dd HH:mm"; 
             if (DateTime.TryParseExact(pv1.appointment_datetime, format, null, System.Globalization.DateTimeStyles.None, out DateTime app_DT))
             {
-                MessageBox.Show(app_DT.ToString());
+                //MessageBox.Show(app_DT.ToString());
             }
             else
             {
@@ -59,7 +59,7 @@ namespace WindowsFormsAppHospital
                 {
                     MessageBox.Show($"❌ Ошибка: {ex.Message}\nPatientID: {pv1.user_id}\nDoctorID: {pv1.doctor_id}");
                 }
-
+                this.Close();
             }
             else if (result == DialogResult.Cancel)
             {

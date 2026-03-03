@@ -14,23 +14,19 @@ namespace WindowsFormsAppHospital
 {
     public partial class FormSpecList : Form
     {
-        int role;
-        string username;
         public_vars pv;
 
         SqlConnection conn = new SqlConnection(Properties.Settings.Default.shamin_hospitalConnectionString);
-        public FormSpecList(int role_id, string db_username, public_vars pv)
+        public FormSpecList(public_vars pv)
         {
             InitializeComponent();
-            role = role_id;
-            username = db_username;
             this.pv = pv;
         }
 
 
         private void FormDoctorList_Load(object sender, EventArgs e)
         {
-            lb_hello.Text += username;
+            lb_hello.Text += pv.username;
 
             conn.Open();
 

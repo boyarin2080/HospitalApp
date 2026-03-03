@@ -12,5 +12,7 @@ namespace WindowsFormsAppHospital
         public int doctor_id;
         public string doctor_fio;
         public string appointment_datetime;
+        public string username;
+        public int role;
     }
 }

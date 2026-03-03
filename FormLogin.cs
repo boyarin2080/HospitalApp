@@ -46,8 +46,10 @@ namespace WindowsFormsAppHospital
                 string db_username = reader["name"].ToString();
                 public_vars pv = new public_vars();
                 pv.user_id = user_id;
+                pv.role = role;
+                pv.username = db_username;
 
-                FormSpecList form = new FormSpecList(role, db_username, pv);
+                FormAccount form = new FormAccount(pv);
 
                 //MessageBox.Show($"{pv.user_id} and uid: {user_id}");
                 this.Hide();
