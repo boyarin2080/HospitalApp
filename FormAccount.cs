@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static WindowsFormsAppHospital.FormDoctorSchedule;
 
 namespace WindowsFormsAppHospital
 {
@@ -19,6 +21,9 @@ namespace WindowsFormsAppHospital
             [2] = "Доктор",
             [3] = "Администратор"
         };
+
+        SqlConnection conn = new SqlConnection(Properties.Settings.Default.shamin_hospitalConnectionString);
+
         public FormAccount(public_vars pv)
         {
             InitializeComponent();
@@ -46,11 +51,25 @@ namespace WindowsFormsAppHospital
             {
                 btn_admin_func.Enabled = true;
             }
+
+            FillMyAppointments();
+        }
+
+        private void FillMyAppointments()
+        {
+            string query = $"SELECT * FROM vw_my_appointments WHERE patient_id = {pv.user_id}";
+            SqlDataAdapter da = new SqlDataAdapter(query, conn);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            dgv_my_appointments.DataSource = dt;
         }
 
         private void btn_admin_func_Click(object sender, EventArgs e)
         {
-
+            FormAdminPanel form = new FormAdminPanel();
+            form.ShowDialog();
+            this.Hide();
         }
 
         private void btn_doctor_func_Click(object sender, EventArgs e)
@@ -60,7 +79,7 @@ namespace WindowsFormsAppHospital
 
         private void btn_my_appointments_Click(object sender, EventArgs e)
         {
-
+            FillMyAppointments();
         }
 
         private void llbl_edit_data_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

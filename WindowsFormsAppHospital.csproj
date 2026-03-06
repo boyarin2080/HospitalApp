@@ -59,6 +59,12 @@
     <Compile Include="FormAccount.Designer.cs">
       <DependentUpon>FormAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAdminPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdminPanel.Designer.cs">
+      <DependentUpon>FormAdminPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCreateAppointment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +94,16 @@
     </Compile>
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myappointmentsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>myappointmentsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="my_appointmentsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>my_appointmentsDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -127,6 +143,28 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="myappointmentsDataSet.xsc">
+      <DependentUpon>myappointmentsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="myappointmentsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>myappointmentsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="myappointmentsDataSet.xss">
+      <DependentUpon>myappointmentsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="my_appointmentsDataSet.xsc">
+      <DependentUpon>my_appointmentsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="my_appointmentsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>my_appointmentsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="my_appointmentsDataSet.xss">
+      <DependentUpon>my_appointmentsDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

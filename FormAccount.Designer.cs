@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btn_zapis_na_priem = new System.Windows.Forms.Button();
             this.lbl_hello = new System.Windows.Forms.Label();
             this.lbl_you_are = new System.Windows.Forms.Label();
@@ -35,15 +36,29 @@
             this.btn_doctor_func = new System.Windows.Forms.Button();
             this.btn_my_appointments = new System.Windows.Forms.Button();
             this.llbl_edit_data = new System.Windows.Forms.LinkLabel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dgv_my_appointments = new System.Windows.Forms.DataGridView();
+            this.vwmyappointmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.my_appointmentsDataSet = new WindowsFormsAppHospital.my_appointmentsDataSet();
+            this.vw_my_appointmentsTableAdapter = new WindowsFormsAppHospital.my_appointmentsDataSetTableAdapters.vw_my_appointmentsTableAdapter();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.фамилияПользователяDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.специальностьВрачаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.фамилияВрачаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.времяЗаписиDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.жалобаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.диагнозDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.статусDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_my_appointments)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vwmyappointmentsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.my_appointmentsDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_zapis_na_priem
             // 
-            this.btn_zapis_na_priem.Location = new System.Drawing.Point(39, 261);
+            this.btn_zapis_na_priem.Location = new System.Drawing.Point(26, 297);
+            this.btn_zapis_na_priem.Margin = new System.Windows.Forms.Padding(2);
             this.btn_zapis_na_priem.Name = "btn_zapis_na_priem";
-            this.btn_zapis_na_priem.Size = new System.Drawing.Size(253, 82);
+            this.btn_zapis_na_priem.Size = new System.Drawing.Size(190, 67);
             this.btn_zapis_na_priem.TabIndex = 0;
             this.btn_zapis_na_priem.Text = "Запись на приём";
             this.btn_zapis_na_priem.UseVisualStyleBackColor = true;
@@ -52,26 +67,29 @@
             // lbl_hello
             // 
             this.lbl_hello.AutoSize = true;
-            this.lbl_hello.Location = new System.Drawing.Point(58, 46);
+            this.lbl_hello.Location = new System.Drawing.Point(44, 37);
+            this.lbl_hello.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_hello.Name = "lbl_hello";
-            this.lbl_hello.Size = new System.Drawing.Size(107, 16);
+            this.lbl_hello.Size = new System.Drawing.Size(83, 13);
             this.lbl_hello.TabIndex = 1;
             this.lbl_hello.Text = "Здравствуйте, ";
             // 
             // lbl_you_are
             // 
             this.lbl_you_are.AutoSize = true;
-            this.lbl_you_are.Location = new System.Drawing.Point(58, 71);
+            this.lbl_you_are.Location = new System.Drawing.Point(44, 58);
+            this.lbl_you_are.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_you_are.Name = "lbl_you_are";
-            this.lbl_you_are.Size = new System.Drawing.Size(100, 16);
+            this.lbl_you_are.Size = new System.Drawing.Size(84, 13);
             this.lbl_you_are.TabIndex = 2;
             this.lbl_you_are.Text = "Вы вошли как: ";
             // 
             // btn_admin_func
             // 
-            this.btn_admin_func.Location = new System.Drawing.Point(514, 261);
+            this.btn_admin_func.Location = new System.Drawing.Point(778, 297);
+            this.btn_admin_func.Margin = new System.Windows.Forms.Padding(2);
             this.btn_admin_func.Name = "btn_admin_func";
-            this.btn_admin_func.Size = new System.Drawing.Size(253, 82);
+            this.btn_admin_func.Size = new System.Drawing.Size(190, 67);
             this.btn_admin_func.TabIndex = 3;
             this.btn_admin_func.Text = "Админ - панель";
             this.btn_admin_func.UseVisualStyleBackColor = true;
@@ -79,9 +97,10 @@
             // 
             // btn_doctor_func
             // 
-            this.btn_doctor_func.Location = new System.Drawing.Point(514, 365);
+            this.btn_doctor_func.Location = new System.Drawing.Point(778, 382);
+            this.btn_doctor_func.Margin = new System.Windows.Forms.Padding(2);
             this.btn_doctor_func.Name = "btn_doctor_func";
-            this.btn_doctor_func.Size = new System.Drawing.Size(253, 82);
+            this.btn_doctor_func.Size = new System.Drawing.Size(190, 67);
             this.btn_doctor_func.TabIndex = 4;
             this.btn_doctor_func.Text = "Доктор - панель";
             this.btn_doctor_func.UseVisualStyleBackColor = true;
@@ -89,9 +108,10 @@
             // 
             // btn_my_appointments
             // 
-            this.btn_my_appointments.Location = new System.Drawing.Point(39, 365);
+            this.btn_my_appointments.Location = new System.Drawing.Point(26, 382);
+            this.btn_my_appointments.Margin = new System.Windows.Forms.Padding(2);
             this.btn_my_appointments.Name = "btn_my_appointments";
-            this.btn_my_appointments.Size = new System.Drawing.Size(253, 82);
+            this.btn_my_appointments.Size = new System.Drawing.Size(190, 67);
             this.btn_my_appointments.TabIndex = 5;
             this.btn_my_appointments.Text = "Мои записи";
             this.btn_my_appointments.UseVisualStyleBackColor = true;
@@ -100,31 +120,117 @@
             // llbl_edit_data
             // 
             this.llbl_edit_data.AutoSize = true;
-            this.llbl_edit_data.Location = new System.Drawing.Point(61, 97);
+            this.llbl_edit_data.Location = new System.Drawing.Point(46, 79);
+            this.llbl_edit_data.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.llbl_edit_data.Name = "llbl_edit_data";
-            this.llbl_edit_data.Size = new System.Drawing.Size(160, 16);
+            this.llbl_edit_data.Size = new System.Drawing.Size(125, 13);
             this.llbl_edit_data.TabIndex = 6;
             this.llbl_edit_data.TabStop = true;
             this.llbl_edit_data.Text = "Редактировать данные";
             this.llbl_edit_data.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbl_edit_data_LinkClicked);
             // 
-            // dataGridView1
+            // dgv_my_appointments
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(334, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(432, 232);
-            this.dataGridView1.TabIndex = 7;
+            this.dgv_my_appointments.AutoGenerateColumns = false;
+            this.dgv_my_appointments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_my_appointments.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.фамилияПользователяDataGridViewTextBoxColumn,
+            this.специальностьВрачаDataGridViewTextBoxColumn,
+            this.фамилияВрачаDataGridViewTextBoxColumn,
+            this.времяЗаписиDataGridViewTextBoxColumn,
+            this.жалобаDataGridViewTextBoxColumn,
+            this.диагнозDataGridViewTextBoxColumn,
+            this.статусDataGridViewTextBoxColumn});
+            this.dgv_my_appointments.DataSource = this.vwmyappointmentsBindingSource;
+            this.dgv_my_appointments.Location = new System.Drawing.Point(250, 10);
+            this.dgv_my_appointments.Margin = new System.Windows.Forms.Padding(2);
+            this.dgv_my_appointments.Name = "dgv_my_appointments";
+            this.dgv_my_appointments.ReadOnly = true;
+            this.dgv_my_appointments.RowHeadersVisible = false;
+            this.dgv_my_appointments.RowHeadersWidth = 51;
+            this.dgv_my_appointments.RowTemplate.Height = 24;
+            this.dgv_my_appointments.Size = new System.Drawing.Size(718, 227);
+            this.dgv_my_appointments.TabIndex = 7;
+            // 
+            // vwmyappointmentsBindingSource
+            // 
+            this.vwmyappointmentsBindingSource.DataMember = "vw_my_appointments";
+            this.vwmyappointmentsBindingSource.DataSource = this.my_appointmentsDataSet;
+            // 
+            // my_appointmentsDataSet
+            // 
+            this.my_appointmentsDataSet.DataSetName = "my_appointmentsDataSet";
+            this.my_appointmentsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vw_my_appointmentsTableAdapter
+            // 
+            this.vw_my_appointmentsTableAdapter.ClearBeforeFill = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "№";
+            this.dataGridViewTextBoxColumn1.HeaderText = "№";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 30;
+            // 
+            // фамилияПользователяDataGridViewTextBoxColumn
+            // 
+            this.фамилияПользователяDataGridViewTextBoxColumn.DataPropertyName = "Фамилия Пользователя";
+            this.фамилияПользователяDataGridViewTextBoxColumn.HeaderText = "Фамилия Пользователя";
+            this.фамилияПользователяDataGridViewTextBoxColumn.Name = "фамилияПользователяDataGridViewTextBoxColumn";
+            this.фамилияПользователяDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // специальностьВрачаDataGridViewTextBoxColumn
+            // 
+            this.специальностьВрачаDataGridViewTextBoxColumn.DataPropertyName = "Специальность врача";
+            this.специальностьВрачаDataGridViewTextBoxColumn.HeaderText = "Специальность врача";
+            this.специальностьВрачаDataGridViewTextBoxColumn.Name = "специальностьВрачаDataGridViewTextBoxColumn";
+            this.специальностьВрачаDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // фамилияВрачаDataGridViewTextBoxColumn
+            // 
+            this.фамилияВрачаDataGridViewTextBoxColumn.DataPropertyName = "Фамилия Врача";
+            this.фамилияВрачаDataGridViewTextBoxColumn.HeaderText = "Фамилия Врача";
+            this.фамилияВрачаDataGridViewTextBoxColumn.Name = "фамилияВрачаDataGridViewTextBoxColumn";
+            this.фамилияВрачаDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // времяЗаписиDataGridViewTextBoxColumn
+            // 
+            this.времяЗаписиDataGridViewTextBoxColumn.DataPropertyName = "Время записи";
+            this.времяЗаписиDataGridViewTextBoxColumn.HeaderText = "Время записи";
+            this.времяЗаписиDataGridViewTextBoxColumn.Name = "времяЗаписиDataGridViewTextBoxColumn";
+            this.времяЗаписиDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // жалобаDataGridViewTextBoxColumn
+            // 
+            this.жалобаDataGridViewTextBoxColumn.DataPropertyName = "Жалоба";
+            this.жалобаDataGridViewTextBoxColumn.HeaderText = "Жалоба";
+            this.жалобаDataGridViewTextBoxColumn.Name = "жалобаDataGridViewTextBoxColumn";
+            this.жалобаDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // диагнозDataGridViewTextBoxColumn
+            // 
+            this.диагнозDataGridViewTextBoxColumn.DataPropertyName = "Диагноз";
+            this.диагнозDataGridViewTextBoxColumn.HeaderText = "Диагноз";
+            this.диагнозDataGridViewTextBoxColumn.Name = "диагнозDataGridViewTextBoxColumn";
+            this.диагнозDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // статусDataGridViewTextBoxColumn
+            // 
+            this.статусDataGridViewTextBoxColumn.DataPropertyName = "Статус";
+            this.статусDataGridViewTextBoxColumn.HeaderText = "Статус";
+            this.статусDataGridViewTextBoxColumn.Name = "статусDataGridViewTextBoxColumn";
+            this.статусDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // FormAccount
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCyan;
-            this.ClientSize = new System.Drawing.Size(800, 473);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(992, 465);
+            this.Controls.Add(this.dgv_my_appointments);
             this.Controls.Add(this.llbl_edit_data);
             this.Controls.Add(this.btn_my_appointments);
             this.Controls.Add(this.btn_doctor_func);
@@ -132,10 +238,13 @@
             this.Controls.Add(this.lbl_you_are);
             this.Controls.Add(this.lbl_hello);
             this.Controls.Add(this.btn_zapis_na_priem);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormAccount";
             this.Text = "FormAccount";
             this.Load += new System.EventHandler(this.FormAccount_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_my_appointments)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vwmyappointmentsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.my_appointmentsDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -150,6 +259,17 @@
         private System.Windows.Forms.Button btn_doctor_func;
         private System.Windows.Forms.Button btn_my_appointments;
         private System.Windows.Forms.LinkLabel llbl_edit_data;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgv_my_appointments;
+        private my_appointmentsDataSet my_appointmentsDataSet;
+        private System.Windows.Forms.BindingSource vwmyappointmentsBindingSource;
+        private my_appointmentsDataSetTableAdapters.vw_my_appointmentsTableAdapter vw_my_appointmentsTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn фамилияПользователяDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn специальностьВрачаDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn фамилияВрачаDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn времяЗаписиDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn жалобаDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn диагнозDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn статусDataGridViewTextBoxColumn;
     }
 }
