@@ -39,7 +39,7 @@
             // btn_login
             // 
             this.btn_login.Location = new System.Drawing.Point(93, 201);
-            this.btn_login.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_login.Margin = new System.Windows.Forms.Padding(2);
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(154, 63);
             this.btn_login.TabIndex = 0;
@@ -50,7 +50,7 @@
             // tb_password
             // 
             this.tb_password.Location = new System.Drawing.Point(91, 161);
-            this.tb_password.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_password.Margin = new System.Windows.Forms.Padding(2);
             this.tb_password.Name = "tb_password";
             this.tb_password.Size = new System.Drawing.Size(156, 20);
             this.tb_password.TabIndex = 1;
@@ -59,7 +59,7 @@
             // tb_login
             // 
             this.tb_login.Location = new System.Drawing.Point(93, 112);
-            this.tb_login.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_login.Margin = new System.Windows.Forms.Padding(2);
             this.tb_login.Name = "tb_login";
             this.tb_login.Size = new System.Drawing.Size(156, 20);
             this.tb_login.TabIndex = 2;
@@ -109,9 +109,9 @@
             this.Controls.Add(this.tb_login);
             this.Controls.Add(this.tb_password);
             this.Controls.Add(this.btn_login);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormLogin";
-            this.Text = "Login";
+            this.Text = "Вход в учётную запись";
             this.ResumeLayout(false);
             this.PerformLayout();
 

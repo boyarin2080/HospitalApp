@@ -54,7 +54,7 @@
             this.cb_choose_spec.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_choose_spec.FormattingEnabled = true;
             this.cb_choose_spec.Location = new System.Drawing.Point(62, 169);
-            this.cb_choose_spec.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cb_choose_spec.Margin = new System.Windows.Forms.Padding(2);
             this.cb_choose_spec.Name = "cb_choose_spec";
             this.cb_choose_spec.Size = new System.Drawing.Size(199, 21);
             this.cb_choose_spec.TabIndex = 2;
@@ -72,7 +72,7 @@
             // button_choose_doc
             // 
             this.button_choose_doc.Location = new System.Drawing.Point(63, 260);
-            this.button_choose_doc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_choose_doc.Margin = new System.Windows.Forms.Padding(2);
             this.button_choose_doc.Name = "button_choose_doc";
             this.button_choose_doc.Size = new System.Drawing.Size(197, 48);
             this.button_choose_doc.TabIndex = 4;
@@ -95,7 +95,7 @@
             this.cb_hospital_choose.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_hospital_choose.FormattingEnabled = true;
             this.cb_hospital_choose.Location = new System.Drawing.Point(63, 107);
-            this.cb_hospital_choose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cb_hospital_choose.Margin = new System.Windows.Forms.Padding(2);
             this.cb_hospital_choose.Name = "cb_hospital_choose";
             this.cb_hospital_choose.Size = new System.Drawing.Size(198, 21);
             this.cb_hospital_choose.TabIndex = 5;
@@ -117,9 +117,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cb_choose_spec);
             this.Controls.Add(this.lb_hello);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormSpecList";
-            this.Text = "FormSpecList";
+            this.Text = "Выбор специальности врача";
             this.Load += new System.EventHandler(this.FormDoctorList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.shamin_hospitalDataSet1)).EndInit();
             this.ResumeLayout(false);

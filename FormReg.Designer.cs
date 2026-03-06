@@ -51,7 +51,7 @@
             // btn_reg
             // 
             this.btn_reg.Location = new System.Drawing.Point(106, 240);
-            this.btn_reg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_reg.Margin = new System.Windows.Forms.Padding(2);
             this.btn_reg.Name = "btn_reg";
             this.btn_reg.Size = new System.Drawing.Size(187, 54);
             this.btn_reg.TabIndex = 0;
@@ -62,7 +62,7 @@
             // tb_name
             // 
             this.tb_name.Location = new System.Drawing.Point(58, 55);
-            this.tb_name.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_name.Margin = new System.Windows.Forms.Padding(2);
             this.tb_name.Name = "tb_name";
             this.tb_name.Size = new System.Drawing.Size(132, 20);
             this.tb_name.TabIndex = 1;
@@ -90,7 +90,7 @@
             // tb_surname
             // 
             this.tb_surname.Location = new System.Drawing.Point(58, 93);
-            this.tb_surname.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_surname.Margin = new System.Windows.Forms.Padding(2);
             this.tb_surname.Name = "tb_surname";
             this.tb_surname.Size = new System.Drawing.Size(132, 20);
             this.tb_surname.TabIndex = 3;
@@ -108,7 +108,7 @@
             // tb_patronymic
             // 
             this.tb_patronymic.Location = new System.Drawing.Point(58, 133);
-            this.tb_patronymic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_patronymic.Margin = new System.Windows.Forms.Padding(2);
             this.tb_patronymic.Name = "tb_patronymic";
             this.tb_patronymic.Size = new System.Drawing.Size(132, 20);
             this.tb_patronymic.TabIndex = 5;
@@ -126,7 +126,7 @@
             // tb_phone
             // 
             this.tb_phone.Location = new System.Drawing.Point(216, 55);
-            this.tb_phone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_phone.Margin = new System.Windows.Forms.Padding(2);
             this.tb_phone.Name = "tb_phone";
             this.tb_phone.Size = new System.Drawing.Size(132, 20);
             this.tb_phone.TabIndex = 7;
@@ -144,7 +144,7 @@
             // tb_email
             // 
             this.tb_email.Location = new System.Drawing.Point(215, 93);
-            this.tb_email.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_email.Margin = new System.Windows.Forms.Padding(2);
             this.tb_email.Name = "tb_email";
             this.tb_email.Size = new System.Drawing.Size(132, 20);
             this.tb_email.TabIndex = 9;
@@ -152,7 +152,7 @@
             // dTP_birth
             // 
             this.dTP_birth.Location = new System.Drawing.Point(58, 176);
-            this.dTP_birth.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dTP_birth.Margin = new System.Windows.Forms.Padding(2);
             this.dTP_birth.Name = "dTP_birth";
             this.dTP_birth.Size = new System.Drawing.Size(132, 20);
             this.dTP_birth.TabIndex = 11;
@@ -182,7 +182,7 @@
             // tb_pass
             // 
             this.tb_pass.Location = new System.Drawing.Point(216, 133);
-            this.tb_pass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_pass.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pass.Name = "tb_pass";
             this.tb_pass.Size = new System.Drawing.Size(133, 20);
             this.tb_pass.TabIndex = 14;
@@ -200,7 +200,7 @@
             // tb_pass_2
             // 
             this.tb_pass_2.Location = new System.Drawing.Point(214, 176);
-            this.tb_pass_2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_pass_2.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pass_2.Name = "tb_pass_2";
             this.tb_pass_2.Size = new System.Drawing.Size(133, 20);
             this.tb_pass_2.TabIndex = 16;
@@ -239,9 +239,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tb_name);
             this.Controls.Add(this.btn_reg);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormReg";
-            this.Text = "FormReg";
+            this.Text = "Регистриция нового пользователя";
             this.ResumeLayout(false);
             this.PerformLayout();
 

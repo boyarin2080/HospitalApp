@@ -37,9 +37,6 @@
             this.btn_my_appointments = new System.Windows.Forms.Button();
             this.llbl_edit_data = new System.Windows.Forms.LinkLabel();
             this.dgv_my_appointments = new System.Windows.Forms.DataGridView();
-            this.vwmyappointmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.my_appointmentsDataSet = new WindowsFormsAppHospital.my_appointmentsDataSet();
-            this.vw_my_appointmentsTableAdapter = new WindowsFormsAppHospital.my_appointmentsDataSetTableAdapters.vw_my_appointmentsTableAdapter();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.фамилияПользователяDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.специальностьВрачаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +45,9 @@
             this.жалобаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.диагнозDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.статусDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vwmyappointmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.my_appointmentsDataSet = new WindowsFormsAppHospital.my_appointmentsDataSet();
+            this.vw_my_appointmentsTableAdapter = new WindowsFormsAppHospital.my_appointmentsDataSetTableAdapters.vw_my_appointmentsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_my_appointments)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vwmyappointmentsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.my_appointmentsDataSet)).BeginInit();
@@ -153,20 +153,6 @@
             this.dgv_my_appointments.Size = new System.Drawing.Size(718, 227);
             this.dgv_my_appointments.TabIndex = 7;
             // 
-            // vwmyappointmentsBindingSource
-            // 
-            this.vwmyappointmentsBindingSource.DataMember = "vw_my_appointments";
-            this.vwmyappointmentsBindingSource.DataSource = this.my_appointmentsDataSet;
-            // 
-            // my_appointmentsDataSet
-            // 
-            this.my_appointmentsDataSet.DataSetName = "my_appointmentsDataSet";
-            this.my_appointmentsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // vw_my_appointmentsTableAdapter
-            // 
-            this.vw_my_appointmentsTableAdapter.ClearBeforeFill = true;
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "№";
@@ -224,6 +210,20 @@
             this.статусDataGridViewTextBoxColumn.Name = "статусDataGridViewTextBoxColumn";
             this.статусDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // vwmyappointmentsBindingSource
+            // 
+            this.vwmyappointmentsBindingSource.DataMember = "vw_my_appointments";
+            this.vwmyappointmentsBindingSource.DataSource = this.my_appointmentsDataSet;
+            // 
+            // my_appointmentsDataSet
+            // 
+            this.my_appointmentsDataSet.DataSetName = "my_appointmentsDataSet";
+            this.my_appointmentsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vw_my_appointmentsTableAdapter
+            // 
+            this.vw_my_appointmentsTableAdapter.ClearBeforeFill = true;
+            // 
             // FormAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -240,7 +240,7 @@
             this.Controls.Add(this.btn_zapis_na_priem);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormAccount";
-            this.Text = "FormAccount";
+            this.Text = "Личный Кабинет";
             this.Load += new System.EventHandler(this.FormAccount_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_my_appointments)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vwmyappointmentsBindingSource)).EndInit();

@@ -146,7 +146,7 @@
             this.Controls.Add(this.splitter1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormDoctorSchedule";
-            this.Text = "FormDoctorSchedule";
+            this.Text = "Расписание врача";
             this.Load += new System.EventHandler(this.FormDoctorSchedule_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_doctor_schedule)).EndInit();
             this.panel1.ResumeLayout(false);

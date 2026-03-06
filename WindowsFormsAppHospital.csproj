@@ -119,6 +119,9 @@
     <EmbeddedResource Include="FormAccount.resx">
       <DependentUpon>FormAccount.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormAdminPanel.resx">
+      <DependentUpon>FormAdminPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCreateAppointment.resx">
       <DependentUpon>FormCreateAppointment.cs</DependentUpon>
     </EmbeddedResource>
