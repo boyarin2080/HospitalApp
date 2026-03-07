@@ -28,14 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btn_EditUser = new System.Windows.Forms.Button();
             this.btn_EditAppointments = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.TSM_Exit = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgv_admin_utility = new System.Windows.Forms.DataGridView();
+            this.dgv_AllAppointments = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cms_edit = new System.Windows.Forms.ToolStripMenuItem();
+            this.cms_remove = new System.Windows.Forms.ToolStripMenuItem();
+            this.dgv_AllUsers = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_admin_utility)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_AllAppointments)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_AllUsers)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_EditUser
@@ -84,18 +91,54 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Вы вошли как Администратор";
             // 
-            // dgv_admin_utility
+            // dgv_AllAppointments
             // 
-            this.dgv_admin_utility.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_admin_utility.Location = new System.Drawing.Point(305, 40);
-            this.dgv_admin_utility.Margin = new System.Windows.Forms.Padding(2);
-            this.dgv_admin_utility.Name = "dgv_admin_utility";
-            this.dgv_admin_utility.ReadOnly = true;
-            this.dgv_admin_utility.RowHeadersVisible = false;
-            this.dgv_admin_utility.RowHeadersWidth = 51;
-            this.dgv_admin_utility.RowTemplate.Height = 24;
-            this.dgv_admin_utility.Size = new System.Drawing.Size(701, 492);
-            this.dgv_admin_utility.TabIndex = 8;
+            this.dgv_AllAppointments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_AllAppointments.Location = new System.Drawing.Point(331, 40);
+            this.dgv_AllAppointments.Margin = new System.Windows.Forms.Padding(2);
+            this.dgv_AllAppointments.Name = "dgv_AllAppointments";
+            this.dgv_AllAppointments.ReadOnly = true;
+            this.dgv_AllAppointments.RowHeadersVisible = false;
+            this.dgv_AllAppointments.RowHeadersWidth = 51;
+            this.dgv_AllAppointments.RowTemplate.Height = 24;
+            this.dgv_AllAppointments.Size = new System.Drawing.Size(692, 431);
+            this.dgv_AllAppointments.TabIndex = 8;
+            this.dgv_AllAppointments.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_admin_utility_CellMouseClick);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cms_edit,
+            this.cms_remove});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(155, 48);
+            // 
+            // cms_edit
+            // 
+            this.cms_edit.Name = "cms_edit";
+            this.cms_edit.Size = new System.Drawing.Size(154, 22);
+            this.cms_edit.Text = "Редактировать";
+            this.cms_edit.Click += new System.EventHandler(this.cms_edit_Click);
+            // 
+            // cms_remove
+            // 
+            this.cms_remove.Name = "cms_remove";
+            this.cms_remove.Size = new System.Drawing.Size(154, 22);
+            this.cms_remove.Text = "Удалить";
+            this.cms_remove.Click += new System.EventHandler(this.cms_remove_Click);
+            // 
+            // dgv_AllUsers
+            // 
+            this.dgv_AllUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_AllUsers.Location = new System.Drawing.Point(331, 40);
+            this.dgv_AllUsers.Margin = new System.Windows.Forms.Padding(2);
+            this.dgv_AllUsers.Name = "dgv_AllUsers";
+            this.dgv_AllUsers.ReadOnly = true;
+            this.dgv_AllUsers.RowHeadersVisible = false;
+            this.dgv_AllUsers.RowHeadersWidth = 51;
+            this.dgv_AllUsers.RowTemplate.Height = 24;
+            this.dgv_AllUsers.Size = new System.Drawing.Size(692, 431);
+            this.dgv_AllUsers.TabIndex = 9;
             // 
             // FormAdminPanel
             // 
@@ -103,7 +146,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCyan;
             this.ClientSize = new System.Drawing.Size(1034, 562);
-            this.Controls.Add(this.dgv_admin_utility);
+            this.Controls.Add(this.dgv_AllUsers);
+            this.Controls.Add(this.dgv_AllAppointments);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_EditAppointments);
             this.Controls.Add(this.btn_EditUser);
@@ -111,9 +155,12 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormAdminPanel";
             this.Text = "Панель Администратора";
+            this.Load += new System.EventHandler(this.FormAdminPanel_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_admin_utility)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_AllAppointments)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_AllUsers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,6 +173,10 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem TSM_Exit;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgv_admin_utility;
+        private System.Windows.Forms.DataGridView dgv_AllAppointments;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem cms_edit;
+        private System.Windows.Forms.ToolStripMenuItem cms_remove;
+        private System.Windows.Forms.DataGridView dgv_AllUsers;
     }
 }

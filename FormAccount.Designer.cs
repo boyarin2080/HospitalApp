@@ -67,7 +67,7 @@
             // lbl_hello
             // 
             this.lbl_hello.AutoSize = true;
-            this.lbl_hello.Location = new System.Drawing.Point(44, 37);
+            this.lbl_hello.Location = new System.Drawing.Point(23, 40);
             this.lbl_hello.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_hello.Name = "lbl_hello";
             this.lbl_hello.Size = new System.Drawing.Size(83, 13);
@@ -77,7 +77,7 @@
             // lbl_you_are
             // 
             this.lbl_you_are.AutoSize = true;
-            this.lbl_you_are.Location = new System.Drawing.Point(44, 58);
+            this.lbl_you_are.Location = new System.Drawing.Point(25, 69);
             this.lbl_you_are.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_you_are.Name = "lbl_you_are";
             this.lbl_you_are.Size = new System.Drawing.Size(84, 13);
@@ -120,7 +120,7 @@
             // llbl_edit_data
             // 
             this.llbl_edit_data.AutoSize = true;
-            this.llbl_edit_data.Location = new System.Drawing.Point(46, 79);
+            this.llbl_edit_data.Location = new System.Drawing.Point(23, 95);
             this.llbl_edit_data.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.llbl_edit_data.Name = "llbl_edit_data";
             this.llbl_edit_data.Size = new System.Drawing.Size(125, 13);
@@ -143,14 +143,14 @@
             this.диагнозDataGridViewTextBoxColumn,
             this.статусDataGridViewTextBoxColumn});
             this.dgv_my_appointments.DataSource = this.vwmyappointmentsBindingSource;
-            this.dgv_my_appointments.Location = new System.Drawing.Point(250, 10);
+            this.dgv_my_appointments.Location = new System.Drawing.Point(244, 10);
             this.dgv_my_appointments.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_my_appointments.Name = "dgv_my_appointments";
             this.dgv_my_appointments.ReadOnly = true;
             this.dgv_my_appointments.RowHeadersVisible = false;
             this.dgv_my_appointments.RowHeadersWidth = 51;
             this.dgv_my_appointments.RowTemplate.Height = 24;
-            this.dgv_my_appointments.Size = new System.Drawing.Size(718, 227);
+            this.dgv_my_appointments.Size = new System.Drawing.Size(724, 268);
             this.dgv_my_appointments.TabIndex = 7;
             // 
             // dataGridViewTextBoxColumn1

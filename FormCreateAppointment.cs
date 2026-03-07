@@ -60,6 +60,7 @@ namespace WindowsFormsAppHospital
                     MessageBox.Show($"❌ Ошибка: {ex.Message}\nPatientID: {pv1.user_id}\nDoctorID: {pv1.doctor_id}");
                 }
                 this.Close();
+                                
             }
             else if (result == DialogResult.Cancel)
             {

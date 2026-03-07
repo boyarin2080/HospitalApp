@@ -188,7 +188,12 @@ namespace WindowsFormsAppHospital
                     var slots = GenerateTimeSlots(startTime, endTime, duration);
                     FillDGV(slots, week_day);
                 }
-                catch (Exception ex) { }
+                catch (Exception Ex)
+                {
+                    string message = Ex.Message + "\n\nНажмите OK для копирования в буфер обмена";
+                    MessageBox.Show(message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Clipboard.SetText(Ex.Message); // Копирует только сообщение, без инструкции
+                }
             }
             if (dt.Rows.Count == 0)
             {
@@ -247,8 +252,13 @@ namespace WindowsFormsAppHospital
 
         private void записатьсяToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form form = new FormCreateAppointment(pv);
-            form.ShowDialog();
+            using (Form form = new FormCreateAppointment(pv))
+            {
+                form.ShowDialog();
+            }
+
+            btn_search_Click(sender, e);
+
         }
 
         private void dgv_doctor_schedule_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -269,6 +279,8 @@ namespace WindowsFormsAppHospital
                     cms_create_appointment.Show(MousePosition);
                 }
             pv.appointment_datetime = dtp_schedule_date.Value.ToString("yyyy-MM-dd") + " " + dgv_doctor_schedule.CurrentCell.Value.ToString();
+
+
         }
     }
 }

@@ -67,10 +67,14 @@ namespace WindowsFormsAppHospital
 
         private void btn_admin_func_Click(object sender, EventArgs e)
         {
-            FormAdminPanel form = new FormAdminPanel();
-            form.ShowDialog();
-            this.Hide();
+            using (FormAdminPanel form = new FormAdminPanel())
+            {
+                this.Hide();
+                form.ShowDialog();
+            }
+            this.Show();
         }
+
 
         private void btn_doctor_func_Click(object sender, EventArgs e)
         {
