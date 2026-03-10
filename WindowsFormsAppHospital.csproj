@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormAddDoctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddDoctor.Designer.cs">
+      <DependentUpon>FormAddDoctor.cs</DependentUpon>
+    </Compile>
     <Compile Include="db_conn_class.cs" />
     <Compile Include="DoctorCard.cs">
       <SubType>UserControl</SubType>
@@ -76,6 +82,12 @@
     </Compile>
     <Compile Include="FormDoctorSchedule.Designer.cs">
       <DependentUpon>FormDoctorSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditRole.Designer.cs">
+      <DependentUpon>FormEditRole.cs</DependentUpon>
     </Compile>
     <Compile Include="FormReg.cs">
       <SubType>Form</SubType>
@@ -113,6 +125,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>shamin_hospitalDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormAddDoctor.resx">
+      <DependentUpon>FormAddDoctor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DoctorCard.resx">
       <DependentUpon>DoctorCard.cs</DependentUpon>
     </EmbeddedResource>
@@ -127,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDoctorSchedule.resx">
       <DependentUpon>FormDoctorSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditRole.resx">
+      <DependentUpon>FormEditRole.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormReg.resx">
       <DependentUpon>FormReg.cs</DependentUpon>

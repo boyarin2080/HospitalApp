@@ -55,7 +55,7 @@ namespace WindowsFormsAppHospital
             if (e.Button == MouseButtons.Right)
                 if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
                 {
-                    contextMenuStrip1.Show(MousePosition);
+                    cms_EditAppointments.Show(MousePosition);
                 }
         }
 
@@ -64,6 +64,7 @@ namespace WindowsFormsAppHospital
         {
 
         }
+
         //Удалить запись
         private void cms_remove_Click(object sender, EventArgs e)
         {
@@ -124,6 +125,30 @@ namespace WindowsFormsAppHospital
         {
             dgv_AllUsers.Visible = false;
             dgv_AllAppointments.Visible = false;
+        }
+
+        private void dgv_AllUsers_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+                if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+                {
+                    cms_EditUsers.Show(MousePosition);
+                }
+        }
+        
+        //Изменить роль пользователя
+        private void cms_EditRole_Click(object sender, EventArgs e)
+        {
+            string Us_role = dgv_AllUsers.CurrentRow.Cells["Роль"].Value.ToString();
+            int Edituid = Convert.ToInt32(dgv_AllUsers.CurrentRow.Cells["uid"].Value);
+
+
+            // form.SetDesktopLocation(Cursor.Position.X, Cursor.Position.Y);
+            using (FormEditRole form = new FormEditRole(Us_role, Edituid))
+            {
+                form.ShowDialog();
+            }
+            btn_EditUser_Click(sender, e);
         }
     }
 }
