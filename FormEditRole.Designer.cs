@@ -37,7 +37,7 @@
             // cb_SelectRole
             // 
             this.cb_SelectRole.FormattingEnabled = true;
-            this.cb_SelectRole.Location = new System.Drawing.Point(33, 55);
+            this.cb_SelectRole.Location = new System.Drawing.Point(41, 79);
             this.cb_SelectRole.Name = "cb_SelectRole";
             this.cb_SelectRole.Size = new System.Drawing.Size(194, 21);
             this.cb_SelectRole.TabIndex = 0;
@@ -45,7 +45,7 @@
             // lbl_role
             // 
             this.lbl_role.AutoSize = true;
-            this.lbl_role.Location = new System.Drawing.Point(41, 25);
+            this.lbl_role.Location = new System.Drawing.Point(49, 48);
             this.lbl_role.Name = "lbl_role";
             this.lbl_role.Size = new System.Drawing.Size(171, 13);
             this.lbl_role.TabIndex = 1;
@@ -53,7 +53,7 @@
             // 
             // btn_editrole
             // 
-            this.btn_editrole.Location = new System.Drawing.Point(67, 115);
+            this.btn_editrole.Location = new System.Drawing.Point(75, 146);
             this.btn_editrole.Name = "btn_editrole";
             this.btn_editrole.Size = new System.Drawing.Size(124, 49);
             this.btn_editrole.TabIndex = 2;
@@ -64,7 +64,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 90);
+            this.label1.Location = new System.Drawing.Point(38, 121);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(159, 13);
             this.label1.TabIndex = 3;
@@ -75,7 +75,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCyan;
-            this.ClientSize = new System.Drawing.Size(270, 187);
+            this.ClientSize = new System.Drawing.Size(270, 250);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_editrole);
             this.Controls.Add(this.lbl_role);

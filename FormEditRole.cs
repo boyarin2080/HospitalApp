@@ -27,44 +27,51 @@ namespace WindowsFormsAppHospital
         {
             string selectedValue = cb_SelectRole.Text;
             int newRole = cb_SelectRole.SelectedIndex + 1;
-            DialogResult result = MessageBox.Show($"Точно изменить роль пользователя с {us_role} на {selectedValue}({newRole}) ??", "Подтверждение", MessageBoxButtons.OKCancel);
-            if (result == DialogResult.OK && newRole != 2)
+            if (selectedValue != us_role) //проверка на то что роль изменилась
             {
-                SqlCommand cmd = new SqlCommand("UpdateUserRole", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@UserID", edit_uid);
-                cmd.Parameters.AddWithValue("@NewRole", newRole);
-
-                conn.Open();
-
-                SqlDataReader reader = cmd.ExecuteReader();
-                reader.Read();
-
-                if (reader.HasRows)
+                try
                 {
-                    MessageBox.Show("Роль успешно изменена.");
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Не удалось");
-                }
-                conn.Close();
-            }
-            if (result == DialogResult.OK && newRole == 2)
-            {
-                DialogResult result1 = MessageBox.Show("Хотите добавить врача?", "Подтверждение", MessageBoxButtons.OKCancel);
-                if (result == DialogResult.OK)
-                {
-                    using (FormAddDoctor frm = new FormAddDoctor(edit_uid))
+                    DialogResult result = MessageBox.Show($"Точно изменить роль пользователя с {us_role} на {selectedValue}({newRole}) ??", "Подтверждение", MessageBoxButtons.OKCancel);
+                    if (result == DialogResult.OK && newRole != 2)
                     {
-                        frm.ShowDialog();
+                        SqlCommand cmd = new SqlCommand("UpdateUserRole", conn);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@UserID", edit_uid);
+                        cmd.Parameters.AddWithValue("@NewRole", newRole);
+
+                        conn.Open();
+
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        reader.Read();
+
+                        if (reader.HasRows)
+                        {
+                            MessageBox.Show("Роль успешно изменена.");
+                            conn.Close();
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Не удалось");
+                        }
+                        conn.Close();
                     }
-                    this.Close();
+                    if (result == DialogResult.OK && newRole == 2)
+                    {
+                        using (FormAddDoctor frm = new FormAddDoctor(edit_uid))
+                        {
+                            frm.StartPosition = FormStartPosition.Manual;
+                            frm.Location = Cursor.Position;  // Точно под курсором
+                            frm.ShowDialog();
+                        }
+                        this.Close();
+                    }
+                    else { }
                 }
-                else { }
+                catch (Exception ex) { MessageBox.Show(ex.Message); }
             }
-            else {}
+            else { MessageBox.Show("Вы не изменили роль!!"); }
+     
         }
 
         private void FormEditRole_Load(object sender, EventArgs e)

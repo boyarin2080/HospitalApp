@@ -41,8 +41,8 @@
             this.dgv_AllUsers = new System.Windows.Forms.DataGridView();
             this.cms_EditUsers = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cms_EditRole = new System.Windows.Forms.ToolStripMenuItem();
-            this.редактироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.csm_edit = new System.Windows.Forms.ToolStripMenuItem();
+            this.cms_deleteuser = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_AllAppointments)).BeginInit();
             this.cms_EditAppointments.SuspendLayout();
@@ -150,29 +150,30 @@
             // 
             this.cms_EditUsers.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cms_EditRole,
-            this.редактироватьToolStripMenuItem,
-            this.удалитьToolStripMenuItem});
+            this.csm_edit,
+            this.cms_deleteuser});
             this.cms_EditUsers.Name = "cms_EditUsers";
-            this.cms_EditUsers.Size = new System.Drawing.Size(159, 70);
+            this.cms_EditUsers.Size = new System.Drawing.Size(181, 92);
             // 
             // cms_EditRole
             // 
             this.cms_EditRole.Name = "cms_EditRole";
-            this.cms_EditRole.Size = new System.Drawing.Size(180, 22);
+            this.cms_EditRole.Size = new System.Drawing.Size(158, 22);
             this.cms_EditRole.Text = "Изменить роль";
             this.cms_EditRole.Click += new System.EventHandler(this.cms_EditRole_Click);
             // 
-            // редактироватьToolStripMenuItem
+            // csm_edit
             // 
-            this.редактироватьToolStripMenuItem.Name = "редактироватьToolStripMenuItem";
-            this.редактироватьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.редактироватьToolStripMenuItem.Text = "Редактировать";
+            this.csm_edit.Name = "csm_edit";
+            this.csm_edit.Size = new System.Drawing.Size(158, 22);
+            this.csm_edit.Text = "Редактировать";
             // 
-            // удалитьToolStripMenuItem
+            // cms_deleteuser
             // 
-            this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
-            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.удалитьToolStripMenuItem.Text = "Удалить";
+            this.cms_deleteuser.Name = "cms_deleteuser";
+            this.cms_deleteuser.Size = new System.Drawing.Size(180, 22);
+            this.cms_deleteuser.Text = "Удалить";
+            this.cms_deleteuser.Click += new System.EventHandler(this.cms_deleteuser_Click);
             // 
             // FormAdminPanel
             // 
@@ -215,7 +216,7 @@
         private System.Windows.Forms.DataGridView dgv_AllUsers;
         private System.Windows.Forms.ContextMenuStrip cms_EditUsers;
         private System.Windows.Forms.ToolStripMenuItem cms_EditRole;
-        private System.Windows.Forms.ToolStripMenuItem редактироватьToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem удалитьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem csm_edit;
+        private System.Windows.Forms.ToolStripMenuItem cms_deleteuser;
     }
 }

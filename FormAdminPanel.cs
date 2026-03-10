@@ -146,9 +146,44 @@ namespace WindowsFormsAppHospital
             // form.SetDesktopLocation(Cursor.Position.X, Cursor.Position.Y);
             using (FormEditRole form = new FormEditRole(Us_role, Edituid))
             {
+                form.StartPosition = FormStartPosition.Manual;
+                form.Location = Cursor.Position;  // Точно под курсором
                 form.ShowDialog();
             }
             btn_EditUser_Click(sender, e);
+        }
+
+        private void cms_deleteuser_Click(object sender, EventArgs e)
+        {
+            int Edituid = Convert.ToInt32(dgv_AllUsers.CurrentRow.Cells["uid"].Value);
+            try
+            {
+                DialogResult res = MessageBox.Show("Вы точно хотите удалить пользователя?", "Подвтерждение", MessageBoxButtons.OKCancel);
+                if (res == DialogResult.OK)
+                {
+                    SqlCommand cmd = new SqlCommand("DeleteUser", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@UserId", Edituid);
+
+                    conn.Open();
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    reader.Read();
+
+                    if (reader.HasRows)
+                    {
+                        MessageBox.Show("Пользователь удалён");
+                        conn.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Не удалось");
+                    }
+                    conn.Close();
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+
         }
     }
 }
