@@ -26,6 +26,7 @@ namespace WindowsFormsAppHospital
         public FormDoctorSchedule(string speciality, string hospital, int spec_id, int hosp_id, public_vars pv)
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             doctor_spec = speciality;
             doctor_hospital = hospital;
             spec_Id = spec_id;
@@ -254,6 +255,9 @@ namespace WindowsFormsAppHospital
         {
             using (Form form = new FormCreateAppointment(pv))
             {
+                form.StartPosition = FormStartPosition.Manual;
+                Point cursorPos = Cursor.Position;
+                form.Location = new Point(cursorPos.X, cursorPos.Y - (form.Height / 2));
                 form.ShowDialog();
             }
 

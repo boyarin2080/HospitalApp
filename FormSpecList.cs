@@ -20,6 +20,7 @@ namespace WindowsFormsAppHospital
         public FormSpecList(public_vars pv)
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             this.pv = pv;
         }
 

@@ -27,6 +27,7 @@ namespace WindowsFormsAppHospital
         public FormAccount(public_vars pv)
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             this.pv = pv;
         }
 

@@ -19,6 +19,7 @@ namespace WindowsFormsAppHospital
         public FormAdminPanel()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void TSM_Exit_Click(object sender, EventArgs e)

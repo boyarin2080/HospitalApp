@@ -18,6 +18,7 @@ namespace WindowsFormsAppHospital
         public FormLogin()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void btn_login_Click(object sender, EventArgs e)
