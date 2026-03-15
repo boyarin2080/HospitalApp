@@ -47,10 +47,10 @@
             // 
             // btn_zapis_na_priem
             // 
-            this.btn_zapis_na_priem.Location = new System.Drawing.Point(36, 156);
-            this.btn_zapis_na_priem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_zapis_na_priem.Location = new System.Drawing.Point(27, 127);
+            this.btn_zapis_na_priem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_zapis_na_priem.Name = "btn_zapis_na_priem";
-            this.btn_zapis_na_priem.Size = new System.Drawing.Size(253, 82);
+            this.btn_zapis_na_priem.Size = new System.Drawing.Size(190, 67);
             this.btn_zapis_na_priem.TabIndex = 0;
             this.btn_zapis_na_priem.Text = "Запись на приём";
             this.btn_zapis_na_priem.UseVisualStyleBackColor = true;
@@ -59,27 +59,29 @@
             // lbl_hello
             // 
             this.lbl_hello.AutoSize = true;
-            this.lbl_hello.Location = new System.Drawing.Point(33, 33);
+            this.lbl_hello.Location = new System.Drawing.Point(25, 27);
+            this.lbl_hello.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_hello.Name = "lbl_hello";
-            this.lbl_hello.Size = new System.Drawing.Size(107, 16);
+            this.lbl_hello.Size = new System.Drawing.Size(83, 13);
             this.lbl_hello.TabIndex = 1;
             this.lbl_hello.Text = "Здравствуйте, ";
             // 
             // lbl_you_are
             // 
             this.lbl_you_are.AutoSize = true;
-            this.lbl_you_are.Location = new System.Drawing.Point(35, 69);
+            this.lbl_you_are.Location = new System.Drawing.Point(26, 56);
+            this.lbl_you_are.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_you_are.Name = "lbl_you_are";
-            this.lbl_you_are.Size = new System.Drawing.Size(100, 16);
+            this.lbl_you_are.Size = new System.Drawing.Size(84, 13);
             this.lbl_you_are.TabIndex = 2;
             this.lbl_you_are.Text = "Вы вошли как: ";
             // 
             // btn_admin_func
             // 
-            this.btn_admin_func.Location = new System.Drawing.Point(36, 361);
-            this.btn_admin_func.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_admin_func.Location = new System.Drawing.Point(27, 293);
+            this.btn_admin_func.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_admin_func.Name = "btn_admin_func";
-            this.btn_admin_func.Size = new System.Drawing.Size(253, 82);
+            this.btn_admin_func.Size = new System.Drawing.Size(190, 67);
             this.btn_admin_func.TabIndex = 3;
             this.btn_admin_func.Text = "Админ - панель";
             this.btn_admin_func.UseVisualStyleBackColor = true;
@@ -87,10 +89,10 @@
             // 
             // btn_doctor_func
             // 
-            this.btn_doctor_func.Location = new System.Drawing.Point(36, 465);
-            this.btn_doctor_func.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_doctor_func.Location = new System.Drawing.Point(27, 378);
+            this.btn_doctor_func.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_doctor_func.Name = "btn_doctor_func";
-            this.btn_doctor_func.Size = new System.Drawing.Size(253, 82);
+            this.btn_doctor_func.Size = new System.Drawing.Size(190, 67);
             this.btn_doctor_func.TabIndex = 4;
             this.btn_doctor_func.Text = "Доктор - панель";
             this.btn_doctor_func.UseVisualStyleBackColor = true;
@@ -98,10 +100,10 @@
             // 
             // btn_my_appointments
             // 
-            this.btn_my_appointments.Location = new System.Drawing.Point(36, 260);
-            this.btn_my_appointments.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_my_appointments.Location = new System.Drawing.Point(27, 211);
+            this.btn_my_appointments.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_my_appointments.Name = "btn_my_appointments";
-            this.btn_my_appointments.Size = new System.Drawing.Size(253, 82);
+            this.btn_my_appointments.Size = new System.Drawing.Size(190, 67);
             this.btn_my_appointments.TabIndex = 5;
             this.btn_my_appointments.Text = "Мои записи";
             this.btn_my_appointments.UseVisualStyleBackColor = true;
@@ -110,9 +112,10 @@
             // llbl_edit_data
             // 
             this.llbl_edit_data.AutoSize = true;
-            this.llbl_edit_data.Location = new System.Drawing.Point(33, 101);
+            this.llbl_edit_data.Location = new System.Drawing.Point(25, 82);
+            this.llbl_edit_data.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.llbl_edit_data.Name = "llbl_edit_data";
-            this.llbl_edit_data.Size = new System.Drawing.Size(160, 16);
+            this.llbl_edit_data.Size = new System.Drawing.Size(125, 13);
             this.llbl_edit_data.TabIndex = 6;
             this.llbl_edit_data.TabStop = true;
             this.llbl_edit_data.Text = "Редактировать данные";
@@ -120,15 +123,16 @@
             // 
             // dgv_my_appointments
             // 
+            this.dgv_my_appointments.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgv_my_appointments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_my_appointments.Location = new System.Drawing.Point(325, 12);
-            this.dgv_my_appointments.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgv_my_appointments.Location = new System.Drawing.Point(244, 10);
+            this.dgv_my_appointments.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgv_my_appointments.Name = "dgv_my_appointments";
             this.dgv_my_appointments.ReadOnly = true;
             this.dgv_my_appointments.RowHeadersVisible = false;
             this.dgv_my_appointments.RowHeadersWidth = 51;
             this.dgv_my_appointments.RowTemplate.Height = 24;
-            this.dgv_my_appointments.Size = new System.Drawing.Size(965, 540);
+            this.dgv_my_appointments.Size = new System.Drawing.Size(724, 439);
             this.dgv_my_appointments.TabIndex = 7;
             // 
             // vwmyappointmentsBindingSource
@@ -147,10 +151,10 @@
             // 
             // FormAccount
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCyan;
-            this.ClientSize = new System.Drawing.Size(1323, 572);
+            this.ClientSize = new System.Drawing.Size(992, 465);
             this.Controls.Add(this.dgv_my_appointments);
             this.Controls.Add(this.llbl_edit_data);
             this.Controls.Add(this.btn_my_appointments);
@@ -159,7 +163,7 @@
             this.Controls.Add(this.lbl_you_are);
             this.Controls.Add(this.lbl_hello);
             this.Controls.Add(this.btn_zapis_na_priem);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormAccount";
             this.Text = "Личный Кабинет";
             this.Load += new System.EventHandler(this.FormAccount_Load);

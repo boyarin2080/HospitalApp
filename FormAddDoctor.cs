@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+
 
 namespace WindowsFormsAppHospital
 {
@@ -26,7 +28,7 @@ namespace WindowsFormsAppHospital
             label1.Text += edituid;
             conn.Open();
 
-            string hospquery = "SELECT hosp_id, name FROM vw_hospitals";  // или напрямую "SELECT * FROM specs ORDER BY name"
+            string hospquery = "SELECT hosp_id, name FROM vw_hospitals";
             SqlDataAdapter hospadapter = new SqlDataAdapter(hospquery, conn);
             DataTable hosp_dt = new DataTable();
             hospadapter.Fill(hosp_dt);
@@ -35,7 +37,7 @@ namespace WindowsFormsAppHospital
             cb_hospital_choose.DisplayMember = "name";  // отображаемое поле
             cb_hospital_choose.ValueMember = "hosp_id";
 
-            string query = "SELECT spec_id, spec FROM vw_spec";  // или напрямую "SELECT * FROM specs ORDER BY name"
+            string query = "SELECT spec_id, spec FROM vw_spec";
             SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
             DataTable dt = new DataTable();
             adapter.Fill(dt);
@@ -58,20 +60,36 @@ namespace WindowsFormsAppHospital
             cmd.Parameters.AddWithValue("@doctor_spec", doc_spec);
             cmd.Parameters.AddWithValue("@hosp_id", hosp_id);
 
+            byte[] imageBytes = File.ReadAllBytes("photo.jpg");
+
+            SqlCommand cmd1 = new SqlCommand("UploadDoctorImage", conn);
+            cmd1.CommandType = CommandType.StoredProcedure;
+            cmd1.Parameters.AddWithValue("@FileName", "photo.jpg");
+            cmd1.Parameters.Add("@ImageData", SqlDbType.VarBinary, -1).Value = imageBytes;
+            cmd1.Parameters.AddWithValue("@ContentType", "image/jpeg");
+            cmd1.Parameters.AddWithValue("@Doc_id", edituid);  // ID доктора
+
+
+
             conn.Open();
 
             SqlDataReader reader = cmd.ExecuteReader();
             reader.Read();
-
+            //int newId = (int)cmd.ExecuteScalar();
             if (reader.HasRows)
             {
                 MessageBox.Show("Врач добавлен");
+            }
+            else {MessageBox.Show("Не удалось добавить врача");}
+            reader.Close();
+            SqlDataReader rdr = cmd1.ExecuteReader();
+            if (rdr.HasRows)
+            {
+                MessageBox.Show("Фото врача добавлено");
+                conn.Close();
                 this.Close();
             }
-            else
-            {
-                MessageBox.Show("Не удалось");
-            }
+            else { MessageBox.Show("Не удалось добавить фото"); }
             conn.Close();
         }
     }

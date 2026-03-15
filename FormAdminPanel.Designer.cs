@@ -98,8 +98,9 @@
             // 
             // dgv_AllAppointments
             // 
+            this.dgv_AllAppointments.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgv_AllAppointments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_AllAppointments.Location = new System.Drawing.Point(331, 40);
+            this.dgv_AllAppointments.Location = new System.Drawing.Point(289, 40);
             this.dgv_AllAppointments.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_AllAppointments.Name = "dgv_AllAppointments";
             this.dgv_AllAppointments.ReadOnly = true;
@@ -134,8 +135,9 @@
             // 
             // dgv_AllUsers
             // 
+            this.dgv_AllUsers.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgv_AllUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_AllUsers.Location = new System.Drawing.Point(331, 51);
+            this.dgv_AllUsers.Location = new System.Drawing.Point(289, 40);
             this.dgv_AllUsers.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_AllUsers.Name = "dgv_AllUsers";
             this.dgv_AllUsers.ReadOnly = true;
@@ -153,7 +155,7 @@
             this.csm_edit,
             this.cms_deleteuser});
             this.cms_EditUsers.Name = "cms_EditUsers";
-            this.cms_EditUsers.Size = new System.Drawing.Size(181, 92);
+            this.cms_EditUsers.Size = new System.Drawing.Size(159, 70);
             // 
             // cms_EditRole
             // 
@@ -171,7 +173,7 @@
             // cms_deleteuser
             // 
             this.cms_deleteuser.Name = "cms_deleteuser";
-            this.cms_deleteuser.Size = new System.Drawing.Size(180, 22);
+            this.cms_deleteuser.Size = new System.Drawing.Size(158, 22);
             this.cms_deleteuser.Text = "Удалить";
             this.cms_deleteuser.Click += new System.EventHandler(this.cms_deleteuser_Click);
             // 
