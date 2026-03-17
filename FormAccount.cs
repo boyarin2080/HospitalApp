@@ -79,7 +79,12 @@ namespace WindowsFormsAppHospital
 
         private void btn_doctor_func_Click(object sender, EventArgs e)
         {
-
+            using (FormDoctorAcc form = new FormDoctorAcc(pv))
+            {
+                this.Hide();
+                form.ShowDialog();
+            }
+            this.Show();
         }
 
         private void btn_my_appointments_Click(object sender, EventArgs e)

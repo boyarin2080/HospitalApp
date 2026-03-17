@@ -186,5 +186,15 @@ namespace WindowsFormsAppHospital
             catch (Exception ex) { MessageBox.Show(ex.Message); }
 
         }
+
+        private void dgv_AllUsers_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgv_AllAppointments_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

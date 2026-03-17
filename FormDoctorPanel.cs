@@ -13,11 +13,11 @@ using System.IO;
 
 namespace WindowsFormsAppHospital
 {
-    public partial class FormDoctorAcc : Form
+    public partial class FormDoctorPanel : Form
     {
         SqlConnection conn = new SqlConnection(Properties.Settings.Default.shamin_hospitalConnectionString);
         public_vars _pv;
-        public FormDoctorAcc(public_vars pv)
+        public FormDoctorPanel(public_vars pv)
         {
             InitializeComponent();
             _pv = pv;
@@ -25,9 +25,21 @@ namespace WindowsFormsAppHospital
 
         private void FormDoctorAcc_Load(object sender, EventArgs e)
         {
-            var retriever = new ImageRetriever();
-            retriever.Retrieve(pb_set, _pv.user_id);
+            //lbl_hello.Text += pv.username;
+            //lbl_you_are.Text += roles[pv.role];
+            //btn_doctor_func.Enabled = false;
+            //btn_admin_func.Enabled = false;
 
+            //if (pv.role == 2)
+            //{
+            //    btn_doctor_func.Enabled = true;
+            //}
+            //if (pv.role == 3)
+            //{
+            //    btn_admin_func.Enabled = true;
+            //}
+
+            //FillMyAppointments();
         }
 
         private void btn_select_photo_Click(object sender, EventArgs e)
@@ -41,14 +53,15 @@ namespace WindowsFormsAppHospital
                 {
                     pb_set.Image = Image.FromFile(openFileDialog.FileName);
                 }
+
             }
         }
 
         private void btn_add_photo_Click(object sender, EventArgs e)
         {
-            var uploader = new ImageUploader();
+            var uploader = new ImageUploader(_pv);
             uploader.Upload(pb_set, _pv.user_id);
-            
+
         }
 
 

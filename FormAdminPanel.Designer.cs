@@ -52,9 +52,10 @@
             // 
             // btn_EditUser
             // 
-            this.btn_EditUser.Location = new System.Drawing.Point(27, 167);
+            this.btn_EditUser.Location = new System.Drawing.Point(36, 206);
+            this.btn_EditUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_EditUser.Name = "btn_EditUser";
-            this.btn_EditUser.Size = new System.Drawing.Size(228, 76);
+            this.btn_EditUser.Size = new System.Drawing.Size(304, 94);
             this.btn_EditUser.TabIndex = 0;
             this.btn_EditUser.Text = "Выдача ролей пользователям";
             this.btn_EditUser.UseVisualStyleBackColor = true;
@@ -62,9 +63,10 @@
             // 
             // btn_EditAppointments
             // 
-            this.btn_EditAppointments.Location = new System.Drawing.Point(27, 73);
+            this.btn_EditAppointments.Location = new System.Drawing.Point(36, 90);
+            this.btn_EditAppointments.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_EditAppointments.Name = "btn_EditAppointments";
-            this.btn_EditAppointments.Size = new System.Drawing.Size(228, 74);
+            this.btn_EditAppointments.Size = new System.Drawing.Size(304, 91);
             this.btn_EditAppointments.TabIndex = 1;
             this.btn_EditAppointments.Text = "Редактировать записи";
             this.btn_EditAppointments.UseVisualStyleBackColor = true;
@@ -72,117 +74,129 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TSM_Exit});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1285, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1081, 30);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // TSM_Exit
             // 
             this.TSM_Exit.Name = "TSM_Exit";
-            this.TSM_Exit.Size = new System.Drawing.Size(54, 20);
+            this.TSM_Exit.Size = new System.Drawing.Size(67, 24);
             this.TSM_Exit.Text = "Выход";
             this.TSM_Exit.Click += new System.EventHandler(this.TSM_Exit_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 40);
+            this.label1.Location = new System.Drawing.Point(32, 49);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(160, 13);
+            this.label1.Size = new System.Drawing.Size(200, 16);
             this.label1.TabIndex = 3;
             this.label1.Text = "Вы вошли как Администратор";
             // 
             // dgv_AllAppointments
             // 
+            this.dgv_AllAppointments.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_AllAppointments.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgv_AllAppointments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_AllAppointments.Location = new System.Drawing.Point(289, 40);
-            this.dgv_AllAppointments.Margin = new System.Windows.Forms.Padding(2);
+            this.dgv_AllAppointments.Location = new System.Drawing.Point(354, 39);
+            this.dgv_AllAppointments.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_AllAppointments.Name = "dgv_AllAppointments";
             this.dgv_AllAppointments.ReadOnly = true;
             this.dgv_AllAppointments.RowHeadersVisible = false;
             this.dgv_AllAppointments.RowHeadersWidth = 51;
             this.dgv_AllAppointments.RowTemplate.Height = 24;
-            this.dgv_AllAppointments.Size = new System.Drawing.Size(928, 431);
+            this.dgv_AllAppointments.Size = new System.Drawing.Size(715, 433);
             this.dgv_AllAppointments.TabIndex = 8;
+            this.dgv_AllAppointments.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_AllAppointments_CellContentClick);
             this.dgv_AllAppointments.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_admin_utility_CellMouseClick);
             // 
             // cms_EditAppointments
             // 
+            this.cms_EditAppointments.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.cms_EditAppointments.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cms_edit,
             this.cms_remove});
             this.cms_EditAppointments.Name = "contextMenuStrip1";
-            this.cms_EditAppointments.Size = new System.Drawing.Size(155, 48);
+            this.cms_EditAppointments.Size = new System.Drawing.Size(181, 52);
             // 
             // cms_edit
             // 
             this.cms_edit.Name = "cms_edit";
-            this.cms_edit.Size = new System.Drawing.Size(154, 22);
+            this.cms_edit.Size = new System.Drawing.Size(180, 24);
             this.cms_edit.Text = "Редактировать";
             this.cms_edit.Click += new System.EventHandler(this.cms_edit_Click);
             // 
             // cms_remove
             // 
             this.cms_remove.Name = "cms_remove";
-            this.cms_remove.Size = new System.Drawing.Size(154, 22);
+            this.cms_remove.Size = new System.Drawing.Size(180, 24);
             this.cms_remove.Text = "Удалить";
             this.cms_remove.Click += new System.EventHandler(this.cms_remove_Click);
             // 
             // dgv_AllUsers
             // 
+            this.dgv_AllUsers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_AllUsers.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgv_AllUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_AllUsers.Location = new System.Drawing.Point(289, 40);
-            this.dgv_AllUsers.Margin = new System.Windows.Forms.Padding(2);
+            this.dgv_AllUsers.Location = new System.Drawing.Point(368, 39);
+            this.dgv_AllUsers.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_AllUsers.Name = "dgv_AllUsers";
             this.dgv_AllUsers.ReadOnly = true;
             this.dgv_AllUsers.RowHeadersVisible = false;
             this.dgv_AllUsers.RowHeadersWidth = 51;
             this.dgv_AllUsers.RowTemplate.Height = 24;
-            this.dgv_AllUsers.Size = new System.Drawing.Size(928, 431);
+            this.dgv_AllUsers.Size = new System.Drawing.Size(701, 433);
             this.dgv_AllUsers.TabIndex = 9;
+            this.dgv_AllUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_AllUsers_CellContentClick);
             this.dgv_AllUsers.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_AllUsers_CellMouseClick);
             // 
             // cms_EditUsers
             // 
+            this.cms_EditUsers.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.cms_EditUsers.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cms_EditRole,
             this.csm_edit,
             this.cms_deleteuser});
             this.cms_EditUsers.Name = "cms_EditUsers";
-            this.cms_EditUsers.Size = new System.Drawing.Size(159, 70);
+            this.cms_EditUsers.Size = new System.Drawing.Size(186, 76);
             // 
             // cms_EditRole
             // 
             this.cms_EditRole.Name = "cms_EditRole";
-            this.cms_EditRole.Size = new System.Drawing.Size(158, 22);
+            this.cms_EditRole.Size = new System.Drawing.Size(185, 24);
             this.cms_EditRole.Text = "Изменить роль";
             this.cms_EditRole.Click += new System.EventHandler(this.cms_EditRole_Click);
             // 
             // csm_edit
             // 
             this.csm_edit.Name = "csm_edit";
-            this.csm_edit.Size = new System.Drawing.Size(158, 22);
+            this.csm_edit.Size = new System.Drawing.Size(185, 24);
             this.csm_edit.Text = "Редактировать";
             // 
             // cms_deleteuser
             // 
             this.cms_deleteuser.Name = "cms_deleteuser";
-            this.cms_deleteuser.Size = new System.Drawing.Size(158, 22);
+            this.cms_deleteuser.Size = new System.Drawing.Size(185, 24);
             this.cms_deleteuser.Text = "Удалить";
             this.cms_deleteuser.Click += new System.EventHandler(this.cms_deleteuser_Click);
             // 
             // FormAdminPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCyan;
-            this.ClientSize = new System.Drawing.Size(1285, 562);
+            this.ClientSize = new System.Drawing.Size(1081, 483);
             this.Controls.Add(this.dgv_AllUsers);
             this.Controls.Add(this.dgv_AllAppointments);
             this.Controls.Add(this.label1);
@@ -190,6 +204,7 @@
             this.Controls.Add(this.btn_EditUser);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormAdminPanel";
             this.Text = "Панель Администратора";
             this.Load += new System.EventHandler(this.FormAdminPanel_Load);

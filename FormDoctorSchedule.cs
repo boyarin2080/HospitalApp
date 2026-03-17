@@ -249,6 +249,10 @@ namespace WindowsFormsAppHospital
             busyTimes = LoadAppointmentsByDay(dtp_schedule_date.Value.Date, pv.doctor_id);
             //Загрузка DGV
             LoadSchedule();
+
+            var retriever = new ImageRetriever();
+            int doctor_uid = retriever.GetDoctorUiD(pv.doctor_id);
+            retriever.Retrieve(pb_doctor_icon, doctor_uid);
         }
 
         private void записатьсяToolStripMenuItem_Click(object sender, EventArgs e)
@@ -284,6 +288,11 @@ namespace WindowsFormsAppHospital
                 }
             pv.appointment_datetime = dtp_schedule_date.Value.ToString("yyyy-MM-dd") + " " + dgv_doctor_schedule.CurrentCell.Value.ToString();
 
+
+        }
+
+        private void dgv_doctor_schedule_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

@@ -14,37 +14,40 @@ namespace WindowsFormsAppHospital
 {
     class ImageUploader
     {
-        private readonly SqlConnection _connectionString;
+        SqlConnection conn = new SqlConnection(Properties.Settings.Default.shamin_hospitalConnectionString);
 
-        public ImageUploader(SqlConnection conn, public_vars pv)
+        public ImageUploader()
         {
-            _connectionString = conn;
+          
         }
 
-        public void Upload(PictureBox pictureBox)
+        public void Upload(PictureBox pictureBox, int user_id)
         {
-            using (var connection = _connectionString)
-            using (var command = connection.CreateCommand())
-            {
-                command.CommandText = "INSERT INTO myTable (uid, image) VALUES (@uid, @image)";
-
                 var image = new Bitmap(pictureBox.Image);
-                using (var memoryStream = new MemoryStream())
+            using (var memoryStream = new MemoryStream())
+            {
+                image.Save(memoryStream, ImageFormat.Jpeg);
+                memoryStream.Position = 0;
+
+                byte[] imgdata = memoryStream.ToArray();
+                SqlCommand cmd = new SqlCommand("UploadImage", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@uid", user_id);
+                cmd.Parameters.AddWithValue("@imagedata", imgdata);
+
+                conn.Open();
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                reader.Read();
+
+                if (reader.HasRows) 
                 {
-                    image.Save(memoryStream, ImageFormat.Jpeg);
-                    memoryStream.Position = 0;
-
-                    var sqlParameter = new SqlParameter("@image", SqlDbType.VarBinary, (int)memoryStream.Length)
-                    {
-                        Value = memoryStream.ToArray()
-                    };
-
+                    MessageBox.Show("Фото успешно добавлено!!!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                connection.Open();
-                command.ExecuteNonQuery();
-                connection.Close();
-            }
-        }
+                conn.Close();
+            }              
+        } 
     }
 }
 

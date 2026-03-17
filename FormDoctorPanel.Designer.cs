@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsAppHospital
 {
-    partial class FormDoctorAcc
+    partial class FormDoctorPanel
     {
         /// <summary>
         /// Required designer variable.
@@ -63,7 +63,7 @@
             this.pb_set.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pb_set.Name = "pb_set";
             this.pb_set.Size = new System.Drawing.Size(172, 145);
-            this.pb_set.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_set.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pb_set.TabIndex = 9;
             this.pb_set.TabStop = false;
             // 
@@ -89,7 +89,7 @@
             this.btn_add_photo.UseVisualStyleBackColor = true;
             this.btn_add_photo.Click += new System.EventHandler(this.btn_add_photo_Click);
             // 
-            // FormDoctorAcc
+            // FormDoctorPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -100,12 +100,13 @@
             this.Controls.Add(this.pb_set);
             this.Controls.Add(this.dgv_my_appointments);
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "FormDoctorAcc";
+            this.Name = "FormDoctorPanel";
             this.Text = "FormDoctorAcc";
             this.Load += new System.EventHandler(this.FormDoctorAcc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_my_appointments)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_set)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
