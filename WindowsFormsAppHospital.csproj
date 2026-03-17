@@ -113,6 +113,8 @@
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="ImageRetriever.cs" />
+    <Compile Include="ImageUploader.cs" />
     <Compile Include="myappointmentsDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

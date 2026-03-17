@@ -8,15 +8,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Imaging;
+using System.IO;
 
 namespace WindowsFormsAppHospital
 {
     public partial class FormDoctorAcc : Form
     {
-        SqlConnection conn = new SqlConnection();
-        public FormDoctorAcc()
+        SqlConnection conn = new SqlConnection(Properties.Settings.Default.shamin_hospitalConnectionString);
+        public_vars _pv;
+        public FormDoctorAcc(public_vars pv)
         {
             InitializeComponent();
+            _pv = pv;
         }
 
         private void FormDoctorAcc_Load(object sender, EventArgs e)
@@ -37,6 +41,27 @@ namespace WindowsFormsAppHospital
 
             //FillMyAppointments();
         }
+
+        private void btn_select_photo_Click(object sender, EventArgs e)
+        {
+            using (var openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png";
+                openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    pb_set.Image = Image.FromFile(openFileDialog.FileName);
+                }
+            }
+        }
+
+        private void btn_add_photo_Click(object sender, EventArgs e)
+        {
+            var uploader = new ImageUploader(conn, _pv);
+            uploader.Upload(pb_set);
+        }
+
 
         //private void FillMyAppointments()
         //{

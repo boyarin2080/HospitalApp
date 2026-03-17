@@ -30,7 +30,11 @@
         {
             this.tableAdapterManager1 = new WindowsFormsAppHospital.my_appointmentsDataSetTableAdapters.TableAdapterManager();
             this.dgv_my_appointments = new System.Windows.Forms.DataGridView();
+            this.pb_set = new System.Windows.Forms.PictureBox();
+            this.btn_select_photo = new System.Windows.Forms.Button();
+            this.btn_add_photo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_my_appointments)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_set)).BeginInit();
             this.SuspendLayout();
             // 
             // tableAdapterManager1
@@ -53,17 +57,49 @@
             this.dgv_my_appointments.Size = new System.Drawing.Size(483, 439);
             this.dgv_my_appointments.TabIndex = 8;
             // 
+            // pb_set
+            // 
+            this.pb_set.Location = new System.Drawing.Point(25, 21);
+            this.pb_set.Name = "pb_set";
+            this.pb_set.Size = new System.Drawing.Size(129, 118);
+            this.pb_set.TabIndex = 9;
+            this.pb_set.TabStop = false;
+            // 
+            // btn_select_photo
+            // 
+            this.btn_select_photo.Location = new System.Drawing.Point(25, 154);
+            this.btn_select_photo.Name = "btn_select_photo";
+            this.btn_select_photo.Size = new System.Drawing.Size(129, 53);
+            this.btn_select_photo.TabIndex = 10;
+            this.btn_select_photo.Text = "Выбрать фото";
+            this.btn_select_photo.UseVisualStyleBackColor = true;
+            this.btn_select_photo.Click += new System.EventHandler(this.btn_select_photo_Click);
+            // 
+            // btn_add_photo
+            // 
+            this.btn_add_photo.Location = new System.Drawing.Point(25, 213);
+            this.btn_add_photo.Name = "btn_add_photo";
+            this.btn_add_photo.Size = new System.Drawing.Size(129, 53);
+            this.btn_add_photo.TabIndex = 11;
+            this.btn_add_photo.Text = "Добавить фото";
+            this.btn_add_photo.UseVisualStyleBackColor = true;
+            this.btn_add_photo.Click += new System.EventHandler(this.btn_add_photo_Click);
+            // 
             // FormDoctorAcc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCyan;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_add_photo);
+            this.Controls.Add(this.btn_select_photo);
+            this.Controls.Add(this.pb_set);
             this.Controls.Add(this.dgv_my_appointments);
             this.Name = "FormDoctorAcc";
             this.Text = "FormDoctorAcc";
             this.Load += new System.EventHandler(this.FormDoctorAcc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_my_appointments)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_set)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -72,5 +108,8 @@
 
         private my_appointmentsDataSetTableAdapters.TableAdapterManager tableAdapterManager1;
         private System.Windows.Forms.DataGridView dgv_my_appointments;
+        private System.Windows.Forms.PictureBox pb_set;
+        private System.Windows.Forms.Button btn_select_photo;
+        private System.Windows.Forms.Button btn_add_photo;
     }
 }
