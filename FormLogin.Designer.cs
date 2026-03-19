@@ -54,7 +54,7 @@
             this.tb_password.Name = "tb_password";
             this.tb_password.Size = new System.Drawing.Size(207, 22);
             this.tb_password.TabIndex = 1;
-            this.tb_password.Text = "doctor";
+            this.tb_password.Text = "admin";
             // 
             // tb_login
             // 
@@ -63,7 +63,7 @@
             this.tb_login.Name = "tb_login";
             this.tb_login.Size = new System.Drawing.Size(207, 22);
             this.tb_login.TabIndex = 2;
-            this.tb_login.Text = "doctor";
+            this.tb_login.Text = "admin";
             // 
             // linkLb_reg
             // 

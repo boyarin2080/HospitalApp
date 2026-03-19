@@ -204,7 +204,7 @@ namespace WindowsFormsAppHospital
                 dgv_AllAppointments.Visible = false;
                 dgv_AllUsers.Visible = true;
 
-                string query = $"SELECT * FROM vw_AllUsers WHERE role = 'doctor' ORDER by uid";
+                string query = $"SELECT * FROM vw_AllUsers WHERE [Роль] = 'Врач' ORDER by uid";
                 SqlDataAdapter da = new SqlDataAdapter(query, conn);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
