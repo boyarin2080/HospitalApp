@@ -40,9 +40,24 @@
             this.vwmyappointmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.my_appointmentsDataSet = new WindowsFormsAppHospital.my_appointmentsDataSet();
             this.vw_my_appointmentsTableAdapter = new WindowsFormsAppHospital.my_appointmentsDataSetTableAdapters.vw_my_appointmentsTableAdapter();
+            this.hdb1103DataSet = new WindowsFormsAppHospital.hdb1103DataSet();
+            this.vwmyappointmentsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.vw_my_appointmentsTableAdapter1 = new WindowsFormsAppHospital.hdb1103DataSetTableAdapters.vw_my_appointmentsTableAdapter();
+            this.aidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.фамилияПользователяDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.специальностьВрачаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.фамилияВрачаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.времяЗаписиDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.жалобаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.диагнозDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.статусDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.patientidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.doctoridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_my_appointments)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vwmyappointmentsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.my_appointmentsDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hdb1103DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vwmyappointmentsBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_zapis_na_priem
@@ -123,8 +138,21 @@
             this.dgv_my_appointments.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv_my_appointments.AutoGenerateColumns = false;
             this.dgv_my_appointments.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgv_my_appointments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_my_appointments.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.aidDataGridViewTextBoxColumn,
+            this.фамилияПользователяDataGridViewTextBoxColumn,
+            this.специальностьВрачаDataGridViewTextBoxColumn,
+            this.фамилияВрачаDataGridViewTextBoxColumn,
+            this.времяЗаписиDataGridViewTextBoxColumn,
+            this.жалобаDataGridViewTextBoxColumn,
+            this.диагнозDataGridViewTextBoxColumn,
+            this.статусDataGridViewTextBoxColumn,
+            this.patientidDataGridViewTextBoxColumn,
+            this.doctoridDataGridViewTextBoxColumn});
+            this.dgv_my_appointments.DataSource = this.vwmyappointmentsBindingSource1;
             this.dgv_my_appointments.Location = new System.Drawing.Point(315, 11);
             this.dgv_my_appointments.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_my_appointments.Name = "dgv_my_appointments";
@@ -149,6 +177,112 @@
             // 
             this.vw_my_appointmentsTableAdapter.ClearBeforeFill = true;
             // 
+            // hdb1103DataSet
+            // 
+            this.hdb1103DataSet.DataSetName = "hdb1103DataSet";
+            this.hdb1103DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vwmyappointmentsBindingSource1
+            // 
+            this.vwmyappointmentsBindingSource1.DataMember = "vw_my_appointments";
+            this.vwmyappointmentsBindingSource1.DataSource = this.hdb1103DataSet;
+            // 
+            // vw_my_appointmentsTableAdapter1
+            // 
+            this.vw_my_appointmentsTableAdapter1.ClearBeforeFill = true;
+            // 
+            // aidDataGridViewTextBoxColumn
+            // 
+            this.aidDataGridViewTextBoxColumn.DataPropertyName = "Aid";
+            this.aidDataGridViewTextBoxColumn.HeaderText = "ID Записи";
+            this.aidDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.aidDataGridViewTextBoxColumn.Name = "aidDataGridViewTextBoxColumn";
+            this.aidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.aidDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // фамилияПользователяDataGridViewTextBoxColumn
+            // 
+            this.фамилияПользователяDataGridViewTextBoxColumn.DataPropertyName = "Фамилия Пользователя";
+            this.фамилияПользователяDataGridViewTextBoxColumn.HeaderText = "Фамилия Пользователя";
+            this.фамилияПользователяDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.фамилияПользователяDataGridViewTextBoxColumn.Name = "фамилияПользователяDataGridViewTextBoxColumn";
+            this.фамилияПользователяDataGridViewTextBoxColumn.ReadOnly = true;
+            this.фамилияПользователяDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // специальностьВрачаDataGridViewTextBoxColumn
+            // 
+            this.специальностьВрачаDataGridViewTextBoxColumn.DataPropertyName = "Специальность врача";
+            this.специальностьВрачаDataGridViewTextBoxColumn.HeaderText = "Специальность врача";
+            this.специальностьВрачаDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.специальностьВрачаDataGridViewTextBoxColumn.Name = "специальностьВрачаDataGridViewTextBoxColumn";
+            this.специальностьВрачаDataGridViewTextBoxColumn.ReadOnly = true;
+            this.специальностьВрачаDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // фамилияВрачаDataGridViewTextBoxColumn
+            // 
+            this.фамилияВрачаDataGridViewTextBoxColumn.DataPropertyName = "Фамилия Врача";
+            this.фамилияВрачаDataGridViewTextBoxColumn.HeaderText = "Фамилия Врача";
+            this.фамилияВрачаDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.фамилияВрачаDataGridViewTextBoxColumn.Name = "фамилияВрачаDataGridViewTextBoxColumn";
+            this.фамилияВрачаDataGridViewTextBoxColumn.ReadOnly = true;
+            this.фамилияВрачаDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // времяЗаписиDataGridViewTextBoxColumn
+            // 
+            this.времяЗаписиDataGridViewTextBoxColumn.DataPropertyName = "Время записи";
+            this.времяЗаписиDataGridViewTextBoxColumn.HeaderText = "Время записи";
+            this.времяЗаписиDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.времяЗаписиDataGridViewTextBoxColumn.Name = "времяЗаписиDataGridViewTextBoxColumn";
+            this.времяЗаписиDataGridViewTextBoxColumn.ReadOnly = true;
+            this.времяЗаписиDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // жалобаDataGridViewTextBoxColumn
+            // 
+            this.жалобаDataGridViewTextBoxColumn.DataPropertyName = "Жалоба";
+            this.жалобаDataGridViewTextBoxColumn.HeaderText = "Жалоба";
+            this.жалобаDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.жалобаDataGridViewTextBoxColumn.Name = "жалобаDataGridViewTextBoxColumn";
+            this.жалобаDataGridViewTextBoxColumn.ReadOnly = true;
+            this.жалобаDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // диагнозDataGridViewTextBoxColumn
+            // 
+            this.диагнозDataGridViewTextBoxColumn.DataPropertyName = "Диагноз";
+            this.диагнозDataGridViewTextBoxColumn.HeaderText = "Диагноз";
+            this.диагнозDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.диагнозDataGridViewTextBoxColumn.Name = "диагнозDataGridViewTextBoxColumn";
+            this.диагнозDataGridViewTextBoxColumn.ReadOnly = true;
+            this.диагнозDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // статусDataGridViewTextBoxColumn
+            // 
+            this.статусDataGridViewTextBoxColumn.DataPropertyName = "Статус";
+            this.статусDataGridViewTextBoxColumn.HeaderText = "Статус";
+            this.статусDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.статусDataGridViewTextBoxColumn.Name = "статусDataGridViewTextBoxColumn";
+            this.статусDataGridViewTextBoxColumn.ReadOnly = true;
+            this.статусDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // patientidDataGridViewTextBoxColumn
+            // 
+            this.patientidDataGridViewTextBoxColumn.DataPropertyName = "patient_id";
+            this.patientidDataGridViewTextBoxColumn.HeaderText = "patient_id";
+            this.patientidDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.patientidDataGridViewTextBoxColumn.Name = "patientidDataGridViewTextBoxColumn";
+            this.patientidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.patientidDataGridViewTextBoxColumn.Visible = false;
+            this.patientidDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // doctoridDataGridViewTextBoxColumn
+            // 
+            this.doctoridDataGridViewTextBoxColumn.DataPropertyName = "doctor_id";
+            this.doctoridDataGridViewTextBoxColumn.HeaderText = "doctor_id";
+            this.doctoridDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.doctoridDataGridViewTextBoxColumn.Name = "doctoridDataGridViewTextBoxColumn";
+            this.doctoridDataGridViewTextBoxColumn.ReadOnly = true;
+            this.doctoridDataGridViewTextBoxColumn.Visible = false;
+            this.doctoridDataGridViewTextBoxColumn.Width = 125;
+            // 
             // FormAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -170,6 +304,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_my_appointments)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vwmyappointmentsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.my_appointmentsDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hdb1103DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vwmyappointmentsBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -188,5 +324,18 @@
         private my_appointmentsDataSet my_appointmentsDataSet;
         private System.Windows.Forms.BindingSource vwmyappointmentsBindingSource;
         private my_appointmentsDataSetTableAdapters.vw_my_appointmentsTableAdapter vw_my_appointmentsTableAdapter;
+        private hdb1103DataSet hdb1103DataSet;
+        private System.Windows.Forms.BindingSource vwmyappointmentsBindingSource1;
+        private hdb1103DataSetTableAdapters.vw_my_appointmentsTableAdapter vw_my_appointmentsTableAdapter1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn aidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn фамилияПользователяDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn специальностьВрачаDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn фамилияВрачаDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn времяЗаписиDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn жалобаDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn диагнозDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn статусDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn patientidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn doctoridDataGridViewTextBoxColumn;
     }
 }

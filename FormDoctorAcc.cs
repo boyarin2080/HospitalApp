@@ -25,9 +25,9 @@ namespace WindowsFormsAppHospital
 
         private void FormDoctorAcc_Load(object sender, EventArgs e)
         {
+
             var retriever = new ImageRetriever();
             retriever.Retrieve(pb_set, _pv.user_id);
-
         }
 
         private void btn_select_photo_Click(object sender, EventArgs e)
@@ -49,8 +49,24 @@ namespace WindowsFormsAppHospital
             var uploader = new ImageUploader();
             uploader.Upload(pb_set, _pv.user_id);
             
-        }
+        }    
+        
+        private void FillMyAppointments(int doc_id)
+        {
+            string query = $"SELECT * FROM vw_my_appointments WHERE doctor_id = {doc_id}";
+            SqlDataAdapter da = new SqlDataAdapter(query, conn);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
 
+            dgv_my_appointments.DataSource = dt;
+        }
+        private void btn_upload_appointments_Click(object sender, EventArgs e)
+        {
+            var retriever = new ImageRetriever();
+            int doc_id = retriever.GetDoctorByUiD(_pv.user_id);
+            FillMyAppointments(doc_id);
+        }
+    
 
         //private void FillMyAppointments()
         //{

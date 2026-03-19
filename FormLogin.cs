@@ -28,7 +28,6 @@ namespace WindowsFormsAppHospital
 
             int role;
 
-
             SqlCommand cmd = new SqlCommand("LoginProcedure", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@login", login);

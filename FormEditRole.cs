@@ -31,7 +31,9 @@ namespace WindowsFormsAppHospital
             {
                 try
                 {
-                    DialogResult result = MessageBox.Show($"Точно изменить роль пользователя с {us_role} на {selectedValue}({newRole}) ??", "Подтверждение", MessageBoxButtons.OKCancel);
+                    DialogResult result = MessageBox.Show($"Точно изменить роль пользователя с " +
+                        $"{us_role} на {selectedValue}?", "Подтверждение", 
+                        MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                     if (result == DialogResult.OK && newRole != 2)
                     {
                         SqlCommand cmd = new SqlCommand("UpdateUserRole", conn);
@@ -88,8 +90,7 @@ namespace WindowsFormsAppHospital
             cb_SelectRole.DisplayMember = "role";
             cb_SelectRole.ValueMember = "role_id";
 
-            conn.Close();
-            
+            conn.Close();            
         }
     }
 }

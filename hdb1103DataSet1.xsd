@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="hdb1103DataSet" targetNamespace="http://tempuri.org/hdb1103DataSet1.xsd" xmlns:mstns="http://tempuri.org/hdb1103DataSet1.xsd" xmlns="http://tempuri.org/hdb1103DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="shamin_hospitalConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="shamin_hospitalConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.WindowsFormsAppHospital.Properties.Settings.GlobalReference.Default.shamin_hospitalConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vw_my_appointmentsTableAdapter" GeneratorDataComponentClassName="vw_my_appointmentsTableAdapter" Name="vw_my_appointments" UserDataComponentName="vw_my_appointmentsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="shamin_hospitalConnectionString (Settings)" DbObjectName="hdb1103.dbo.vw_my_appointments" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Aid, [Фамилия Пользователя], [Специальность врача], [Фамилия Врача], [Время записи], Жалоба, Диагноз, Статус, patient_id, doctor_id FROM dbo.vw_my_appointments</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Aid" DataSetColumn="Aid" />
+              <Mapping SourceColumn="Фамилия Пользователя" DataSetColumn="Фамилия Пользователя" />
+              <Mapping SourceColumn="Специальность врача" DataSetColumn="Специальность врача" />
+              <Mapping SourceColumn="Фамилия Врача" DataSetColumn="Фамилия Врача" />
+              <Mapping SourceColumn="Время записи" DataSetColumn="Время записи" />
+              <Mapping SourceColumn="Жалоба" DataSetColumn="Жалоба" />
+              <Mapping SourceColumn="Диагноз" DataSetColumn="Диагноз" />
+              <Mapping SourceColumn="Статус" DataSetColumn="Статус" />
+              <Mapping SourceColumn="patient_id" DataSetColumn="patient_id" />
+              <Mapping SourceColumn="doctor_id" DataSetColumn="doctor_id" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="hdb1103DataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="hdb1103DataSet" msprop:Generator_DataSetName="hdb1103DataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="vw_my_appointments" msprop:Generator_RowEvHandlerName="vw_my_appointmentsRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_my_appointmentsRowDeleted" msprop:Generator_RowDeletingName="vw_my_appointmentsRowDeleting" msprop:Generator_RowEvArgName="vw_my_appointmentsRowChangeEvent" msprop:Generator_TablePropName="vw_my_appointments" msprop:Generator_RowChangedName="vw_my_appointmentsRowChanged" msprop:Generator_RowChangingName="vw_my_appointmentsRowChanging" msprop:Generator_TableClassName="vw_my_appointmentsDataTable" msprop:Generator_RowClassName="vw_my_appointmentsRow" msprop:Generator_TableVarName="tablevw_my_appointments" msprop:Generator_UserTableName="vw_my_appointments">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Aid" msprop:Generator_ColumnPropNameInRow="Aid" msprop:Generator_ColumnPropNameInTable="AidColumn" msprop:Generator_ColumnVarNameInTable="columnAid" msprop:Generator_UserColumnName="Aid" type="xs:int" />
+              <xs:element name="Фамилия_x0020_Пользователя" msprop:Generator_ColumnPropNameInRow="Фамилия_Пользователя" msprop:Generator_ColumnPropNameInTable="Фамилия_ПользователяColumn" msprop:Generator_ColumnVarNameInTable="columnФамилия_Пользователя" msprop:Generator_UserColumnName="Фамилия Пользователя">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Специальность_x0020_врача" msprop:Generator_ColumnPropNameInRow="Специальность_врача" msprop:Generator_ColumnPropNameInTable="Специальность_врачаColumn" msprop:Generator_ColumnVarNameInTable="columnСпециальность_врача" msprop:Generator_UserColumnName="Специальность врача" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Фамилия_x0020_Врача" msprop:Generator_ColumnPropNameInRow="Фамилия_Врача" msprop:Generator_ColumnPropNameInTable="Фамилия_ВрачаColumn" msprop:Generator_ColumnVarNameInTable="columnФамилия_Врача" msprop:Generator_UserColumnName="Фамилия Врача">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Время_x0020_записи" msprop:Generator_ColumnPropNameInRow="Время_записи" msprop:Generator_ColumnPropNameInTable="Время_записиColumn" msprop:Generator_ColumnVarNameInTable="columnВремя_записи" msprop:Generator_UserColumnName="Время записи" type="xs:dateTime" />
+              <xs:element name="Жалоба" msprop:Generator_ColumnPropNameInRow="Жалоба" msprop:Generator_ColumnPropNameInTable="ЖалобаColumn" msprop:Generator_ColumnVarNameInTable="columnЖалоба" msprop:Generator_UserColumnName="Жалоба" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Диагноз" msprop:Generator_ColumnPropNameInRow="Диагноз" msprop:Generator_ColumnPropNameInTable="ДиагнозColumn" msprop:Generator_ColumnVarNameInTable="columnДиагноз" msprop:Generator_UserColumnName="Диагноз" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Статус" msprop:Generator_ColumnPropNameInRow="Статус" msprop:Generator_ColumnPropNameInTable="СтатусColumn" msprop:Generator_ColumnVarNameInTable="columnСтатус" msprop:Generator_UserColumnName="Статус" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="patient_id" msprop:Generator_ColumnPropNameInRow="patient_id" msprop:Generator_ColumnPropNameInTable="patient_idColumn" msprop:Generator_ColumnVarNameInTable="columnpatient_id" msprop:Generator_UserColumnName="patient_id" type="xs:int" />
+              <xs:element name="doctor_id" msprop:Generator_ColumnPropNameInRow="doctor_id" msprop:Generator_ColumnPropNameInTable="doctor_idColumn" msprop:Generator_ColumnVarNameInTable="columndoctor_id" msprop:Generator_UserColumnName="doctor_id" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vw_my_appointments" />
+      <xs:field xpath="mstns:Aid" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

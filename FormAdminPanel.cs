@@ -196,5 +196,27 @@ namespace WindowsFormsAppHospital
         {
 
         }
+
+        private void толькоВрачиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                dgv_AllAppointments.Visible = false;
+                dgv_AllUsers.Visible = true;
+
+                string query = $"SELECT * FROM vw_AllUsers WHERE role = 'doctor' ORDER by uid";
+                SqlDataAdapter da = new SqlDataAdapter(query, conn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dgv_AllUsers.DataSource = dt;
+            }
+            catch (Exception Ex)
+            {
+                string message = Ex.Message + "\n\nНажмите OK для копирования в буфер обмена";
+                MessageBox.Show(message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Clipboard.SetText(Ex.Message); // Копирует только сообщение, без инструкции
+            }
+        }
     }
 }

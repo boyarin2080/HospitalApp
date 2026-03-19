@@ -39,6 +39,8 @@ namespace WindowsFormsAppHospital
 
         private void FormAccount_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "hdb1103DataSet.vw_my_appointments". При необходимости она может быть перемещена или удалена.
+            this.vw_my_appointmentsTableAdapter1.Fill(this.hdb1103DataSet.vw_my_appointments);
             lbl_hello.Text += pv.username;
             lbl_you_are.Text += roles[pv.role];
             btn_doctor_func.Enabled = false;
@@ -62,7 +64,7 @@ namespace WindowsFormsAppHospital
             SqlDataAdapter da = new SqlDataAdapter(query, conn);
             DataTable dt = new DataTable();
             da.Fill(dt);
-
+            
             dgv_my_appointments.DataSource = dt;
         }
 

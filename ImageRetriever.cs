@@ -70,5 +70,33 @@ namespace WindowsFormsAppHospital
 
             return temp;
         }
+
+        public int GetDoctorByUiD(int uid)
+        {
+            int temp = -1;
+            try
+            {
+                using (var command = conn.CreateCommand())
+                {
+                    command.CommandText = "SELECT doctor_id FROM doctors WHERE user_id = @user_id";
+                    command.Parameters.AddWithValue("@user_id", uid);
+                    conn.Open();
+                    using (var reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            temp = reader.GetInt32(0);
+                            conn.Close();
+                        }
+                    }
+                }
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Convert.ToString(Ex));
+            }
+
+            return temp;
+        }
     }
 }

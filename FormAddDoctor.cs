@@ -53,23 +53,12 @@ namespace WindowsFormsAppHospital
         {
             int doc_spec = cb_choose_spec.SelectedIndex + 1;
             int hosp_id = cb_choose_spec.SelectedIndex + 1;
-            MessageBox.Show($"{doc_spec}, {hosp_id}");
+            //MessageBox.Show($"{doc_spec}, {hosp_id}");
             SqlCommand cmd = new SqlCommand("AddDoctor", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@UserId", edituid);
             cmd.Parameters.AddWithValue("@doctor_spec", doc_spec);
             cmd.Parameters.AddWithValue("@hosp_id", hosp_id);
-
-            byte[] imageBytes = File.ReadAllBytes("photo.jpg");
-
-            SqlCommand cmd1 = new SqlCommand("UploadDoctorImage", conn);
-            cmd1.CommandType = CommandType.StoredProcedure;
-            cmd1.Parameters.AddWithValue("@FileName", "photo.jpg");
-            cmd1.Parameters.Add("@ImageData", SqlDbType.VarBinary, -1).Value = imageBytes;
-            cmd1.Parameters.AddWithValue("@ContentType", "image/jpeg");
-            cmd1.Parameters.AddWithValue("@Doc_id", edituid);  // ID доктора
-
-
 
             conn.Open();
 
@@ -79,17 +68,11 @@ namespace WindowsFormsAppHospital
             if (reader.HasRows)
             {
                 MessageBox.Show("Врач добавлен");
-            }
-            else {MessageBox.Show("Не удалось добавить врача");}
-            reader.Close();
-            SqlDataReader rdr = cmd1.ExecuteReader();
-            if (rdr.HasRows)
-            {
-                MessageBox.Show("Фото врача добавлено");
                 conn.Close();
                 this.Close();
             }
-            else { MessageBox.Show("Не удалось добавить фото"); }
+            else {MessageBox.Show("Не удалось добавить врача");}
+            reader.Close();
             conn.Close();
         }
     }

@@ -113,6 +113,11 @@
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="hdb1103DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>hdb1103DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ImageRetriever.cs" />
     <Compile Include="ImageUploader.cs" />
     <Compile Include="myappointmentsDataSet.Designer.cs">
@@ -175,6 +180,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="hdb1103DataSet1.xsc">
+      <DependentUpon>hdb1103DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="hdb1103DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>hdb1103DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="hdb1103DataSet1.xss">
+      <DependentUpon>hdb1103DataSet1.xsd</DependentUpon>
+    </None>
     <None Include="myappointmentsDataSet.xsc">
       <DependentUpon>myappointmentsDataSet.xsd</DependentUpon>
     </None>

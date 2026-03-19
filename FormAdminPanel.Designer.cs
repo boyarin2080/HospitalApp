@@ -43,6 +43,8 @@
             this.cms_EditRole = new System.Windows.Forms.ToolStripMenuItem();
             this.csm_edit = new System.Windows.Forms.ToolStripMenuItem();
             this.cms_deleteuser = new System.Windows.Forms.ToolStripMenuItem();
+            this.сортироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.толькоВрачиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_AllAppointments)).BeginInit();
             this.cms_EditAppointments.SuspendLayout();
@@ -52,21 +54,21 @@
             // 
             // btn_EditUser
             // 
-            this.btn_EditUser.Location = new System.Drawing.Point(36, 206);
-            this.btn_EditUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_EditUser.Location = new System.Drawing.Point(13, 206);
+            this.btn_EditUser.Margin = new System.Windows.Forms.Padding(4);
             this.btn_EditUser.Name = "btn_EditUser";
-            this.btn_EditUser.Size = new System.Drawing.Size(304, 94);
+            this.btn_EditUser.Size = new System.Drawing.Size(251, 94);
             this.btn_EditUser.TabIndex = 0;
-            this.btn_EditUser.Text = "Выдача ролей пользователям";
+            this.btn_EditUser.Text = "Редактировать пользователей";
             this.btn_EditUser.UseVisualStyleBackColor = true;
             this.btn_EditUser.Click += new System.EventHandler(this.btn_EditUser_Click);
             // 
             // btn_EditAppointments
             // 
-            this.btn_EditAppointments.Location = new System.Drawing.Point(36, 90);
-            this.btn_EditAppointments.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_EditAppointments.Location = new System.Drawing.Point(13, 90);
+            this.btn_EditAppointments.Margin = new System.Windows.Forms.Padding(4);
             this.btn_EditAppointments.Name = "btn_EditAppointments";
-            this.btn_EditAppointments.Size = new System.Drawing.Size(304, 91);
+            this.btn_EditAppointments.Size = new System.Drawing.Size(251, 91);
             this.btn_EditAppointments.TabIndex = 1;
             this.btn_EditAppointments.Text = "Редактировать записи";
             this.btn_EditAppointments.UseVisualStyleBackColor = true;
@@ -79,7 +81,7 @@
             this.TSM_Exit});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1081, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1126, 28);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -107,14 +109,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_AllAppointments.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgv_AllAppointments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_AllAppointments.Location = new System.Drawing.Point(354, 39);
+            this.dgv_AllAppointments.Location = new System.Drawing.Point(282, 39);
             this.dgv_AllAppointments.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_AllAppointments.Name = "dgv_AllAppointments";
             this.dgv_AllAppointments.ReadOnly = true;
             this.dgv_AllAppointments.RowHeadersVisible = false;
             this.dgv_AllAppointments.RowHeadersWidth = 51;
             this.dgv_AllAppointments.RowTemplate.Height = 24;
-            this.dgv_AllAppointments.Size = new System.Drawing.Size(715, 433);
+            this.dgv_AllAppointments.Size = new System.Drawing.Size(832, 477);
             this.dgv_AllAppointments.TabIndex = 8;
             this.dgv_AllAppointments.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_AllAppointments_CellContentClick);
             this.dgv_AllAppointments.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_admin_utility_CellMouseClick);
@@ -149,14 +151,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_AllUsers.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgv_AllUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_AllUsers.Location = new System.Drawing.Point(368, 39);
+            this.dgv_AllUsers.Location = new System.Drawing.Point(291, 39);
             this.dgv_AllUsers.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_AllUsers.Name = "dgv_AllUsers";
             this.dgv_AllUsers.ReadOnly = true;
             this.dgv_AllUsers.RowHeadersVisible = false;
             this.dgv_AllUsers.RowHeadersWidth = 51;
             this.dgv_AllUsers.RowTemplate.Height = 24;
-            this.dgv_AllUsers.Size = new System.Drawing.Size(701, 433);
+            this.dgv_AllUsers.Size = new System.Drawing.Size(823, 477);
             this.dgv_AllUsers.TabIndex = 9;
             this.dgv_AllUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_AllUsers_CellContentClick);
             this.dgv_AllUsers.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_AllUsers_CellMouseClick);
@@ -165,11 +167,12 @@
             // 
             this.cms_EditUsers.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.cms_EditUsers.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.сортироватьToolStripMenuItem,
             this.cms_EditRole,
             this.csm_edit,
             this.cms_deleteuser});
             this.cms_EditUsers.Name = "cms_EditUsers";
-            this.cms_EditUsers.Size = new System.Drawing.Size(186, 76);
+            this.cms_EditUsers.Size = new System.Drawing.Size(211, 128);
             // 
             // cms_EditRole
             // 
@@ -191,12 +194,27 @@
             this.cms_deleteuser.Text = "Удалить";
             this.cms_deleteuser.Click += new System.EventHandler(this.cms_deleteuser_Click);
             // 
+            // сортироватьToolStripMenuItem
+            // 
+            this.сортироватьToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.толькоВрачиToolStripMenuItem});
+            this.сортироватьToolStripMenuItem.Name = "сортироватьToolStripMenuItem";
+            this.сортироватьToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.сортироватьToolStripMenuItem.Text = "Сортировать";
+            // 
+            // толькоВрачиToolStripMenuItem
+            // 
+            this.толькоВрачиToolStripMenuItem.Name = "толькоВрачиToolStripMenuItem";
+            this.толькоВрачиToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.толькоВрачиToolStripMenuItem.Text = "Только Врачи";
+            this.толькоВрачиToolStripMenuItem.Click += new System.EventHandler(this.толькоВрачиToolStripMenuItem_Click);
+            // 
             // FormAdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCyan;
-            this.ClientSize = new System.Drawing.Size(1081, 483);
+            this.ClientSize = new System.Drawing.Size(1126, 527);
             this.Controls.Add(this.dgv_AllUsers);
             this.Controls.Add(this.dgv_AllAppointments);
             this.Controls.Add(this.label1);
@@ -204,7 +222,7 @@
             this.Controls.Add(this.btn_EditUser);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormAdminPanel";
             this.Text = "Панель Администратора";
             this.Load += new System.EventHandler(this.FormAdminPanel_Load);
@@ -235,5 +253,7 @@
         private System.Windows.Forms.ToolStripMenuItem cms_EditRole;
         private System.Windows.Forms.ToolStripMenuItem csm_edit;
         private System.Windows.Forms.ToolStripMenuItem cms_deleteuser;
+        private System.Windows.Forms.ToolStripMenuItem сортироватьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem толькоВрачиToolStripMenuItem;
     }
 }
