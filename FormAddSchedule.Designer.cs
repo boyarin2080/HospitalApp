@@ -55,6 +55,7 @@
             this.btn_addschedule.TabIndex = 1;
             this.btn_addschedule.Text = "Добавить расписание";
             this.btn_addschedule.UseVisualStyleBackColor = true;
+            this.btn_addschedule.Click += new System.EventHandler(this.btn_addschedule_Click);
             // 
             // FormAddSchedule
             // 
