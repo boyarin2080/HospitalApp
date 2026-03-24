@@ -126,17 +126,31 @@ namespace WindowsFormsAppHospital
         {
             dgv_AllUsers.Visible = false;
             dgv_AllAppointments.Visible = false;
+            cms_add_schedule.Visible = false;
+            
         }
 
         private void dgv_AllUsers_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            //Проверка роли
+            var mousePos = dgv_AllUsers.PointToClient(Cursor.Position);
+            var hit = dgv_AllUsers.HitTest(mousePos.X, mousePos.Y);
+            var row = dgv_AllUsers.Rows[hit.RowIndex];
+            string Us_role = row.Cells["Роль"].Value.ToString();
+            if (Us_role == "Врач")
+            {
+                cms_add_schedule.Visible = true;
+            }
+            else { cms_add_schedule.Visible = false; }
+            //Здесь вызываем само контекстное меню
             if (e.Button == MouseButtons.Right)
                 if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-                {
+                { 
                     cms_EditUsers.Show(MousePosition);
                 }
+
         }
-        
+
         //Изменить роль пользователя
         private void cms_EditRole_Click(object sender, EventArgs e)
         {
@@ -216,6 +230,14 @@ namespace WindowsFormsAppHospital
                 string message = Ex.Message + "\n\nНажмите OK для копирования в буфер обмена";
                 MessageBox.Show(message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Clipboard.SetText(Ex.Message); // Копирует только сообщение, без инструкции
+            }
+        }
+
+        private void cms_add_schedule_Click(object sender, EventArgs e)
+        {
+            using (FormAddSchedule frm = new FormAddSchedule())
+            {
+                frm.ShowDialog();
             }
         }
     }

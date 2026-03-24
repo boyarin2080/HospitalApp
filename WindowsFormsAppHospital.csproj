@@ -65,6 +65,12 @@
     <Compile Include="FormAccount.Designer.cs">
       <DependentUpon>FormAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAddSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddSchedule.Designer.cs">
+      <DependentUpon>FormAddSchedule.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAdminPanel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormAccount.resx">
       <DependentUpon>FormAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddSchedule.resx">
+      <DependentUpon>FormAddSchedule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAdminPanel.resx">
       <DependentUpon>FormAdminPanel.cs</DependentUpon>
