@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -13,14 +14,18 @@ namespace WindowsFormsAppHospital
 {
     public partial class FormAddSchedule : Form
     {
-        public FormAddSchedule()
+        SqlConnection conn = new SqlConnection(Properties.Settings.Default.shamin_hospitalConnectionString);
+        int doctor_id;
+        public FormAddSchedule(int doctor_id    )
         {
             InitializeComponent();
+            this.doctor_id = doctor_id;
         }
 
         private void FormAddSchedule_Load(object sender, EventArgs e)
         {
             dgv_Load();
+            label1.Text += Convert.ToString(doctor_id);
         }
         private void dgv_Load()
         {
@@ -84,7 +89,6 @@ namespace WindowsFormsAppHospital
                         string cellValuestr = Convert.ToString(startValue);
                         TimeSpan.TryParseExact(cellValuestr, @"h\:mm", CultureInfo.InvariantCulture, out temp);
                         starttime = temp;
-                        //MessageBox.Show($"{starttime}");
                     }
                     catch (Exception ex) { MessageBox.Show(ex.Message); return; }
                 }
@@ -97,12 +101,11 @@ namespace WindowsFormsAppHospital
                         string cellValuestr = Convert.ToString(endValue);
                         TimeSpan.TryParseExact(cellValuestr, @"h\:mm", CultureInfo.InvariantCulture, out temp);
                         endtime = temp;
-                        //MessageBox.Show($"{endtime}");
                     }
                     catch (Exception ex) { MessageBox.Show(ex.Message); return; }
                 }
 
-
+                //Проверка что ОБА значения не нулевые
                 if (startValue == null || endValue == null)
                 {
                     MessageBox.Show($"На день {i} расписания нет!!!", "Не нашлось");
@@ -116,8 +119,33 @@ namespace WindowsFormsAppHospital
                         $"\nДобавить в БД?", "Подтверждение", 
                         MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                     if (result == DialogResult.OK) 
-                    { 
+                    {
+                        int slotduration = Convert.ToInt32(numericUpDown_slotduration.Value);
+                        DateTime valid_from = dtp_validfrom.Value; 
+                        DateTime valid_until = dtp_validuntil.Value;
+
                         //ТУТ ЗАПРОС В БД!!! можно вроде сначала добавить все тут в SQLCOMMAND а после цикла выполнить все команды
+                        SqlCommand cmd = new SqlCommand("UploadWeeklySchedule", conn);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@doctor_id", doctor_id);
+                        cmd.Parameters.AddWithValue("@day_of_week", i+1);
+                        cmd.Parameters.AddWithValue("@startTime", starttime);
+                        cmd.Parameters.AddWithValue("endTime", endtime);
+                        
+                        cmd.Parameters.AddWithValue("@slotDuration", slotduration);
+                        cmd.Parameters.AddWithValue("@valid_from", valid_from);
+                        cmd.Parameters.AddWithValue("@valid_until", valid_until);
+                        conn.Open();
+                        cmd.ExecuteNonQuery();
+                        conn.Close();
+  //@doctor_id int,
+  //@day_of_week int,
+  //@startTime TIME,
+  //@endTime TIME,
+  //@slotDuration int,
+  //@valid_from date,
+  //@valid_until date
+
                     }
 
                 }

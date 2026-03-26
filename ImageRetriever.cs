@@ -93,7 +93,7 @@ namespace WindowsFormsAppHospital
             }
             catch (Exception Ex)
             {
-                MessageBox.Show(Convert.ToString(Ex));
+                MessageBox.Show(Convert.ToString(Ex), "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return temp;

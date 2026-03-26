@@ -15,7 +15,7 @@ namespace WindowsFormsAppHospital
     public partial class FormAdminPanel : Form
     {
         SqlConnection conn = new SqlConnection(Properties.Settings.Default.shamin_hospitalConnectionString);
-
+        //int doctor_id = -1;
         public FormAdminPanel()
         {
             InitializeComponent();
@@ -148,7 +148,6 @@ namespace WindowsFormsAppHospital
                 { 
                     cms_EditUsers.Show(MousePosition);
                 }
-
         }
 
         //Изменить роль пользователя
@@ -235,7 +234,13 @@ namespace WindowsFormsAppHospital
 
         private void cms_add_schedule_Click(object sender, EventArgs e)
         {
-            using (FormAddSchedule frm = new FormAddSchedule())
+            int uid = Convert.ToInt32(dgv_AllUsers.CurrentRow.Cells["uid"].Value);
+            //MessageBox.Show($"uid из адм панели {uid}");
+            var retriever = new ImageRetriever();
+            int doctor_id = retriever.GetDoctorByUiD(uid);
+            MessageBox.Show($"Док id после метода {doctor_id}");
+
+            using (FormAddSchedule frm = new FormAddSchedule(doctor_id))
             {
                 frm.ShowDialog();
             }
