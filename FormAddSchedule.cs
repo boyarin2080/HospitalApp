@@ -72,83 +72,91 @@ namespace WindowsFormsAppHospital
 
         private void btn_addschedule_Click(object sender, EventArgs e)
         {
-
-            for (int i = 0; i < 7; i++)
+            conn.Open();
+            using (SqlTransaction transaction = conn.BeginTransaction())
             {
-                TimeSpan? starttime = null;
-                TimeSpan? endtime = null;
-
-                object startValue = dgv_selectschedule.Rows[0].Cells[i].Value;
-                object endValue = dgv_selectschedule.Rows[1].Cells[i].Value;
-
-                if (startValue != null && startValue != DBNull.Value)
+                try
                 {
-                    try
+                    for (int i = 0; i < 7; i++)
                     {
-                        TimeSpan temp;
-                        string cellValuestr = Convert.ToString(startValue);
-                        TimeSpan.TryParseExact(cellValuestr, @"h\:mm", CultureInfo.InvariantCulture, out temp);
-                        starttime = temp;
+                        TimeSpan? starttime = null;
+                        TimeSpan? endtime = null;
+
+                        object startValue = dgv_selectschedule.Rows[0].Cells[i].Value;
+                        object endValue = dgv_selectschedule.Rows[1].Cells[i].Value;
+
+                        if (startValue != null && startValue != DBNull.Value)
+                        {
+                            try
+                            {
+                                TimeSpan temp;
+                                string cellValuestr = Convert.ToString(startValue);
+                                TimeSpan.TryParseExact(cellValuestr, @"h\:mm", CultureInfo.InvariantCulture, out temp);
+                                starttime = temp;
+                            }
+                            catch (Exception ex) { MessageBox.Show(ex.Message); return; }
+                        }
+                        //Парсим endtime
+                        if (endValue != null && startValue != DBNull.Value)
+                        {
+                            try
+                            {
+                                TimeSpan temp;
+                                string cellValuestr = Convert.ToString(endValue);
+                                TimeSpan.TryParseExact(cellValuestr, @"h\:mm", CultureInfo.InvariantCulture, out temp);
+                                endtime = temp;
+                            }
+                            catch (Exception ex) { MessageBox.Show(ex.Message); return; }
+                        }
+
+                        //Проверка что ОБА значения не нулевые
+                        if (startValue == null || endValue == null)
+                        {
+                            MessageBox.Show($"На день {i} расписания нет!!!", "Не нашлось");
+                        }
+                        else
+                        {
+                            DialogResult result = MessageBox.Show(
+                                $"Для дня {i} " +
+                                $"\nНачало приёма: {starttime}, " +
+                                $"\nКонец приёма: {endtime}. " +
+                                $"\nДобавить в БД?", "Подтверждение",
+                                MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                            if (result == DialogResult.OK)
+                            {
+                                int slotduration = Convert.ToInt32(numericUpDown_slotduration.Value);
+                                DateTime valid_from = dtp_validfrom.Value;
+                                DateTime valid_until = dtp_validuntil.Value;
+
+                                //ТУТ ЗАПРОС В БД!!! можно вроде сначала добавить все тут в SQLCOMMAND а после цикла выполнить все команды
+                                SqlCommand cmd = new SqlCommand("UploadWeeklySchedule", conn);
+                                cmd.CommandType = CommandType.StoredProcedure;
+                                cmd.Transaction = transaction;
+
+                                cmd.Parameters.AddWithValue("@doctor_id", doctor_id);
+                                cmd.Parameters.AddWithValue("@day_of_week", i + 1);
+                                cmd.Parameters.AddWithValue("@startTime", starttime);
+                                cmd.Parameters.AddWithValue("endTime", endtime);
+                                cmd.Parameters.AddWithValue("@slotDuration", slotduration);
+                                cmd.Parameters.AddWithValue("@valid_from", valid_from);
+                                cmd.Parameters.AddWithValue("@valid_until", valid_until);
+                                
+                                cmd.ExecuteNonQuery();
+
+                            }
+                        }
                     }
-                    catch (Exception ex) { MessageBox.Show(ex.Message); return; }
+                    transaction.Commit();  // Все 7 вставок сохранены
+                    MessageBox.Show("Транзакция завершена успешно");
+                    
                 }
-                //Парсим endtime
-                if (endValue != null && startValue != DBNull.Value)
+                catch(Exception ex)
                 {
-                    try
-                    {
-                        TimeSpan temp;
-                        string cellValuestr = Convert.ToString(endValue);
-                        TimeSpan.TryParseExact(cellValuestr, @"h\:mm", CultureInfo.InvariantCulture, out temp);
-                        endtime = temp;
-                    }
-                    catch (Exception ex) { MessageBox.Show(ex.Message); return; }
+                    MessageBox.Show($"Ошибка при транзакции: {ex}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    transaction.Rollback();  // Ни одна не сохранена
+                    //throw; // <- здесь можем послать ошибку на уровень выше но тогда нужен ещё один trycatch
                 }
-
-                //Проверка что ОБА значения не нулевые
-                if (startValue == null || endValue == null)
-                {
-                    MessageBox.Show($"На день {i} расписания нет!!!", "Не нашлось");
-                }
-                else
-                {
-                    DialogResult result = MessageBox.Show(
-                        $"Для дня {i} " +
-                        $"\nНачало приёма: {starttime}, " +
-                        $"\nКонец приёма: {endtime}. " +
-                        $"\nДобавить в БД?", "Подтверждение", 
-                        MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                    if (result == DialogResult.OK) 
-                    {
-                        int slotduration = Convert.ToInt32(numericUpDown_slotduration.Value);
-                        DateTime valid_from = dtp_validfrom.Value; 
-                        DateTime valid_until = dtp_validuntil.Value;
-
-                        //ТУТ ЗАПРОС В БД!!! можно вроде сначала добавить все тут в SQLCOMMAND а после цикла выполнить все команды
-                        SqlCommand cmd = new SqlCommand("UploadWeeklySchedule", conn);
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@doctor_id", doctor_id);
-                        cmd.Parameters.AddWithValue("@day_of_week", i+1);
-                        cmd.Parameters.AddWithValue("@startTime", starttime);
-                        cmd.Parameters.AddWithValue("endTime", endtime);
-                        
-                        cmd.Parameters.AddWithValue("@slotDuration", slotduration);
-                        cmd.Parameters.AddWithValue("@valid_from", valid_from);
-                        cmd.Parameters.AddWithValue("@valid_until", valid_until);
-                        conn.Open();
-                        cmd.ExecuteNonQuery();
-                        conn.Close();
-  //@doctor_id int,
-  //@day_of_week int,
-  //@startTime TIME,
-  //@endTime TIME,
-  //@slotDuration int,
-  //@valid_from date,
-  //@valid_until date
-
-                    }
-
-                }
+                conn.Close();
             }
         }
     }
