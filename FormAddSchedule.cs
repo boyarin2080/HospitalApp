@@ -112,18 +112,20 @@ namespace WindowsFormsAppHospital
                         //Проверка что ОБА значения не нулевые
                         if (startValue == null || endValue == null)
                         {
-                            MessageBox.Show($"На день {i} расписания нет!!!", "Не нашлось");
+                            //MessageBox.Show($"На день {i} расписания нет!!!", "Не нашлось"); 
+                            //^- тут отсеиваются либо выходные врача, либо суббота и воскресение
+
                         }
                         else
                         {
-                            DialogResult result = MessageBox.Show(
-                                $"Для дня {i} " +
-                                $"\nНачало приёма: {starttime}, " +
-                                $"\nКонец приёма: {endtime}. " +
-                                $"\nДобавить в БД?", "Подтверждение",
-                                MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                            if (result == DialogResult.OK)
-                            {
+                            //DialogResult result = MessageBox.Show(
+                            //    $"Для дня {i} " +
+                            //    $"\nНачало приёма: {starttime}, " +
+                            //    $"\nКонец приёма: {endtime}. " +
+                            //    $"\nДобавить в БД?", "Подтверждение",
+                            //    MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                            //if (result == DialogResult.OK)
+                            //{
                                 int slotduration = Convert.ToInt32(numericUpDown_slotduration.Value);
                                 DateTime valid_from = dtp_validfrom.Value;
                                 DateTime valid_until = dtp_validuntil.Value;
@@ -143,7 +145,7 @@ namespace WindowsFormsAppHospital
                                 
                                 cmd.ExecuteNonQuery();
 
-                            }
+                            //}
                         }
                     }
                     transaction.Commit();  // Все 7 вставок сохранены

@@ -32,6 +32,9 @@ namespace WindowsFormsAppHospital
         {
             try
             {
+                dgv_AllAppointments.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dgv_AllAppointments.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+
                 dgv_AllUsers.Visible = false;
                 dgv_AllAppointments.Visible = true;
 
@@ -104,6 +107,9 @@ namespace WindowsFormsAppHospital
         {
             try
             {
+                dgv_AllUsers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dgv_AllUsers.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+
                 dgv_AllAppointments.Visible = false;
                 dgv_AllUsers.Visible = true;
 
@@ -133,21 +139,30 @@ namespace WindowsFormsAppHospital
         private void dgv_AllUsers_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             //Проверка роли
-            var mousePos = dgv_AllUsers.PointToClient(Cursor.Position);
-            var hit = dgv_AllUsers.HitTest(mousePos.X, mousePos.Y);
-            var row = dgv_AllUsers.Rows[hit.RowIndex];
-            string Us_role = row.Cells["Роль"].Value.ToString();
-            if (Us_role == "Врач")
+            try
             {
-                cms_add_schedule.Visible = true;
-            }
-            else { cms_add_schedule.Visible = false; }
-            //Здесь вызываем само контекстное меню
-            if (e.Button == MouseButtons.Right)
-                if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-                { 
-                    cms_EditUsers.Show(MousePosition);
+                var mousePos = dgv_AllUsers.PointToClient(Cursor.Position);
+                var hit = dgv_AllUsers.HitTest(mousePos.X, mousePos.Y);
+                var row = dgv_AllUsers.Rows[hit.RowIndex];
+                var column = dgv_AllUsers.Columns[hit.ColumnIndex];
+
+                dgv_AllUsers.CurrentCell = dgv_AllUsers.Rows[hit.RowIndex].Cells[hit.ColumnIndex];
+
+                string Us_role = row.Cells["Роль"].Value.ToString();
+                if (Us_role == "Врач")
+                {
+                    cms_add_schedule.Visible = true;
                 }
+                else { cms_add_schedule.Visible = false; }
+                //Здесь вызываем само контекстное меню
+                if (e.Button == MouseButtons.Right)
+                    if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+                    {
+                        cms_EditUsers.Show(MousePosition);
+                    }
+            }
+            catch(Exception ex) { MessageBox.Show(Convert.ToString(ex)); }
+           
         }
 
         //Изменить роль пользователя
@@ -238,7 +253,8 @@ namespace WindowsFormsAppHospital
             //MessageBox.Show($"uid из адм панели {uid}");
             var retriever = new ImageRetriever();
             int doctor_id = retriever.GetDoctorByUiD(uid);
-            MessageBox.Show($"Док id после метода {doctor_id}");
+            //MessageBox.Show($"Док id после метода {doctor_id}"); 
+            //Минус в том что обязательно надо именно ВЫБИРАТЬ ячейку которую хочешь редактировать
 
             using (FormAddSchedule frm = new FormAddSchedule(doctor_id))
             {

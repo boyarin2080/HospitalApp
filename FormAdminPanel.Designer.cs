@@ -89,7 +89,7 @@
             // TSM_Exit
             // 
             this.TSM_Exit.Name = "TSM_Exit";
-            this.TSM_Exit.Size = new System.Drawing.Size(67, 26);
+            this.TSM_Exit.Size = new System.Drawing.Size(67, 24);
             this.TSM_Exit.Text = "Выход";
             this.TSM_Exit.Click += new System.EventHandler(this.TSM_Exit_Click);
             // 
@@ -152,7 +152,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_AllUsers.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgv_AllUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_AllUsers.Location = new System.Drawing.Point(291, 39);
+            this.dgv_AllUsers.Location = new System.Drawing.Point(282, 39);
             this.dgv_AllUsers.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_AllUsers.Name = "dgv_AllUsers";
             this.dgv_AllUsers.ReadOnly = true;

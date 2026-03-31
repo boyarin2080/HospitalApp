@@ -49,11 +49,15 @@
             this.btn_add_photo = new System.Windows.Forms.Button();
             this.btn_upload_appointments = new System.Windows.Forms.Button();
             this.vw_my_appointmentsTableAdapter = new WindowsFormsAppHospital.hdb1103DataSetTableAdapters.vw_my_appointmentsTableAdapter();
+            this.cms_EditMyAppointments = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.назначитьЛекарствоToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.завершитьЗаписьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_my_appointments)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vwmyappointmentsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hdb1103DataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hdb1103DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_set)).BeginInit();
+            this.cms_EditMyAppointments.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableAdapterManager1
@@ -91,6 +95,7 @@
             this.dgv_my_appointments.RowTemplate.Height = 24;
             this.dgv_my_appointments.Size = new System.Drawing.Size(833, 550);
             this.dgv_my_appointments.TabIndex = 8;
+            this.dgv_my_appointments.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_my_appointments_CellMouseClick);
             // 
             // aidDataGridViewTextBoxColumn
             // 
@@ -246,6 +251,28 @@
             // 
             this.vw_my_appointmentsTableAdapter.ClearBeforeFill = true;
             // 
+            // cms_EditMyAppointments
+            // 
+            this.cms_EditMyAppointments.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.cms_EditMyAppointments.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.назначитьЛекарствоToolStripMenuItem,
+            this.завершитьЗаписьToolStripMenuItem});
+            this.cms_EditMyAppointments.Name = "cms_EditMyAppointments";
+            this.cms_EditMyAppointments.Size = new System.Drawing.Size(227, 80);
+            // 
+            // назначитьЛекарствоToolStripMenuItem
+            // 
+            this.назначитьЛекарствоToolStripMenuItem.Name = "назначитьЛекарствоToolStripMenuItem";
+            this.назначитьЛекарствоToolStripMenuItem.Size = new System.Drawing.Size(226, 24);
+            this.назначитьЛекарствоToolStripMenuItem.Text = "Назначить лекарство";
+            // 
+            // завершитьЗаписьToolStripMenuItem
+            // 
+            this.завершитьЗаписьToolStripMenuItem.Name = "завершитьЗаписьToolStripMenuItem";
+            this.завершитьЗаписьToolStripMenuItem.Size = new System.Drawing.Size(226, 24);
+            this.завершитьЗаписьToolStripMenuItem.Text = "Завершить запись";
+            this.завершитьЗаписьToolStripMenuItem.Click += new System.EventHandler(this.завершитьЗаписьToolStripMenuItem_Click);
+            // 
             // FormDoctorAcc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -266,6 +293,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.hdb1103DataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hdb1103DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_set)).EndInit();
+            this.cms_EditMyAppointments.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -292,5 +320,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn статусDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn patientidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn doctoridDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ContextMenuStrip cms_EditMyAppointments;
+        private System.Windows.Forms.ToolStripMenuItem назначитьЛекарствоToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem завершитьЗаписьToolStripMenuItem;
     }
 }

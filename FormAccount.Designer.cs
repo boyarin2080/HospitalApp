@@ -37,12 +37,6 @@
             this.btn_my_appointments = new System.Windows.Forms.Button();
             this.llbl_edit_data = new System.Windows.Forms.LinkLabel();
             this.dgv_my_appointments = new System.Windows.Forms.DataGridView();
-            this.vwmyappointmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.my_appointmentsDataSet = new WindowsFormsAppHospital.my_appointmentsDataSet();
-            this.vw_my_appointmentsTableAdapter = new WindowsFormsAppHospital.my_appointmentsDataSetTableAdapters.vw_my_appointmentsTableAdapter();
-            this.hdb1103DataSet = new WindowsFormsAppHospital.hdb1103DataSet();
-            this.vwmyappointmentsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.vw_my_appointmentsTableAdapter1 = new WindowsFormsAppHospital.hdb1103DataSetTableAdapters.vw_my_appointmentsTableAdapter();
             this.aidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.фамилияПользователяDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.специальностьВрачаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,11 +47,18 @@
             this.статусDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.patientidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.doctoridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vwmyappointmentsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.hdb1103DataSet = new WindowsFormsAppHospital.hdb1103DataSet();
+            this.vwmyappointmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.my_appointmentsDataSet = new WindowsFormsAppHospital.my_appointmentsDataSet();
+            this.vw_my_appointmentsTableAdapter = new WindowsFormsAppHospital.my_appointmentsDataSetTableAdapters.vw_my_appointmentsTableAdapter();
+            this.vw_my_appointmentsTableAdapter1 = new WindowsFormsAppHospital.hdb1103DataSetTableAdapters.vw_my_appointmentsTableAdapter();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_my_appointments)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vwmyappointmentsBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hdb1103DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vwmyappointmentsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.my_appointmentsDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hdb1103DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vwmyappointmentsBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_zapis_na_priem
@@ -153,43 +154,15 @@
             this.patientidDataGridViewTextBoxColumn,
             this.doctoridDataGridViewTextBoxColumn});
             this.dgv_my_appointments.DataSource = this.vwmyappointmentsBindingSource1;
-            this.dgv_my_appointments.Location = new System.Drawing.Point(315, 11);
+            this.dgv_my_appointments.Location = new System.Drawing.Point(309, 33);
             this.dgv_my_appointments.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_my_appointments.Name = "dgv_my_appointments";
             this.dgv_my_appointments.ReadOnly = true;
             this.dgv_my_appointments.RowHeadersVisible = false;
             this.dgv_my_appointments.RowHeadersWidth = 51;
             this.dgv_my_appointments.RowTemplate.Height = 24;
-            this.dgv_my_appointments.Size = new System.Drawing.Size(887, 540);
+            this.dgv_my_appointments.Size = new System.Drawing.Size(893, 518);
             this.dgv_my_appointments.TabIndex = 7;
-            // 
-            // vwmyappointmentsBindingSource
-            // 
-            this.vwmyappointmentsBindingSource.DataMember = "vw_my_appointments";
-            this.vwmyappointmentsBindingSource.DataSource = this.my_appointmentsDataSet;
-            // 
-            // my_appointmentsDataSet
-            // 
-            this.my_appointmentsDataSet.DataSetName = "my_appointmentsDataSet";
-            this.my_appointmentsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // vw_my_appointmentsTableAdapter
-            // 
-            this.vw_my_appointmentsTableAdapter.ClearBeforeFill = true;
-            // 
-            // hdb1103DataSet
-            // 
-            this.hdb1103DataSet.DataSetName = "hdb1103DataSet";
-            this.hdb1103DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // vwmyappointmentsBindingSource1
-            // 
-            this.vwmyappointmentsBindingSource1.DataMember = "vw_my_appointments";
-            this.vwmyappointmentsBindingSource1.DataSource = this.hdb1103DataSet;
-            // 
-            // vw_my_appointmentsTableAdapter1
-            // 
-            this.vw_my_appointmentsTableAdapter1.ClearBeforeFill = true;
             // 
             // aidDataGridViewTextBoxColumn
             // 
@@ -283,12 +256,50 @@
             this.doctoridDataGridViewTextBoxColumn.Visible = false;
             this.doctoridDataGridViewTextBoxColumn.Width = 125;
             // 
+            // vwmyappointmentsBindingSource1
+            // 
+            this.vwmyappointmentsBindingSource1.DataMember = "vw_my_appointments";
+            this.vwmyappointmentsBindingSource1.DataSource = this.hdb1103DataSet;
+            // 
+            // hdb1103DataSet
+            // 
+            this.hdb1103DataSet.DataSetName = "hdb1103DataSet";
+            this.hdb1103DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vwmyappointmentsBindingSource
+            // 
+            this.vwmyappointmentsBindingSource.DataMember = "vw_my_appointments";
+            this.vwmyappointmentsBindingSource.DataSource = this.my_appointmentsDataSet;
+            // 
+            // my_appointmentsDataSet
+            // 
+            this.my_appointmentsDataSet.DataSetName = "my_appointmentsDataSet";
+            this.my_appointmentsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vw_my_appointmentsTableAdapter
+            // 
+            this.vw_my_appointmentsTableAdapter.ClearBeforeFill = true;
+            // 
+            // vw_my_appointmentsTableAdapter1
+            // 
+            this.vw_my_appointmentsTableAdapter1.ClearBeforeFill = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(306, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(87, 16);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Мои записи:";
+            // 
             // FormAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCyan;
             this.ClientSize = new System.Drawing.Size(1217, 565);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dgv_my_appointments);
             this.Controls.Add(this.llbl_edit_data);
             this.Controls.Add(this.btn_my_appointments);
@@ -302,10 +313,10 @@
             this.Text = "Личный Кабинет";
             this.Load += new System.EventHandler(this.FormAccount_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_my_appointments)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vwmyappointmentsBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hdb1103DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vwmyappointmentsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.my_appointmentsDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hdb1103DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vwmyappointmentsBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -337,5 +348,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn статусDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn patientidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn doctoridDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label1;
     }
 }
