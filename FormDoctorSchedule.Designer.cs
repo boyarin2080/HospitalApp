@@ -39,10 +39,13 @@
             this.lbl_specandhosp = new System.Windows.Forms.Label();
             this.cms_create_appointment = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.записатьсяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.TSM_Exit = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_doctor_schedule)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_doctor_icon)).BeginInit();
             this.cms_create_appointment.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitter1
@@ -71,7 +74,6 @@
             this.dgv_doctor_schedule.RowTemplate.Height = 24;
             this.dgv_doctor_schedule.Size = new System.Drawing.Size(1109, 394);
             this.dgv_doctor_schedule.TabIndex = 8;
-            this.dgv_doctor_schedule.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_doctor_schedule_CellContentClick);
             this.dgv_doctor_schedule.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_doctor_schedule_CellMouseClick);
             // 
             // panel1
@@ -83,10 +85,10 @@
             this.panel1.Controls.Add(this.cb_doctor_fio);
             this.panel1.Controls.Add(this.dtp_schedule_date);
             this.panel1.Controls.Add(this.lbl_specandhosp);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(0, 30);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1133, 144);
+            this.panel1.Size = new System.Drawing.Size(1133, 135);
             this.panel1.TabIndex = 9;
             // 
             // pb_doctor_icon
@@ -151,12 +153,31 @@
             this.записатьсяToolStripMenuItem.Text = "Записаться";
             this.записатьсяToolStripMenuItem.Click += new System.EventHandler(this.записатьсяToolStripMenuItem_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TSM_Exit});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1133, 30);
+            this.menuStrip1.TabIndex = 10;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // TSM_Exit
+            // 
+            this.TSM_Exit.Name = "TSM_Exit";
+            this.TSM_Exit.Size = new System.Drawing.Size(67, 26);
+            this.TSM_Exit.Text = "Выход";
+            this.TSM_Exit.Click += new System.EventHandler(this.TSM_Exit_Click);
+            // 
             // FormDoctorSchedule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCyan;
             this.ClientSize = new System.Drawing.Size(1133, 610);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgv_doctor_schedule);
             this.Controls.Add(this.splitter1);
@@ -169,7 +190,10 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_doctor_icon)).EndInit();
             this.cms_create_appointment.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -184,5 +208,7 @@
         private System.Windows.Forms.ContextMenuStrip cms_create_appointment;
         private System.Windows.Forms.ToolStripMenuItem записатьсяToolStripMenuItem;
         private System.Windows.Forms.PictureBox pb_doctor_icon;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem TSM_Exit;
     }
 }

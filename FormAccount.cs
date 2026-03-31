@@ -39,8 +39,8 @@ namespace WindowsFormsAppHospital
 
         private void FormAccount_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "hdb1103DataSet.vw_my_appointments". При необходимости она может быть перемещена или удалена.
-            this.vw_my_appointmentsTableAdapter1.Fill(this.hdb1103DataSet.vw_my_appointments);
+            //// TODO: данная строка кода позволяет загрузить данные в таблицу "hdb1103DataSet.vw_my_appointments". При необходимости она может быть перемещена или удалена.
+            //this.vw_my_appointmentsTableAdapter1.Fill(this.hdb1103DataSet.vw_my_appointments);
             lbl_hello.Text += pv.username;
             lbl_you_are.Text += roles[pv.role];
             btn_doctor_func.Enabled = false;
@@ -60,6 +60,8 @@ namespace WindowsFormsAppHospital
 
         private void FillMyAppointments()
         {
+            string scheduled = "";
+            dgv_my_appointments.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             string query = $"SELECT * FROM vw_my_appointments WHERE patient_id = {pv.user_id}";
             SqlDataAdapter da = new SqlDataAdapter(query, conn);
             DataTable dt = new DataTable();
@@ -97,6 +99,17 @@ namespace WindowsFormsAppHospital
         private void llbl_edit_data_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
 
+        }
+
+        private void TSM_Exit_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            FormLogin form = new FormLogin();
+
+            form.ShowDialog();  // блокирующий диалог
+
+            this.Close();  // или this.Show(); если он снова логинится
         }
     }
 }

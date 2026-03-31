@@ -291,9 +291,9 @@ namespace WindowsFormsAppHospital
 
         }
 
-        private void dgv_doctor_schedule_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void TSM_Exit_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

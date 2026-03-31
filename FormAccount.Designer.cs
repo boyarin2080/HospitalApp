@@ -54,11 +54,14 @@
             this.vw_my_appointmentsTableAdapter = new WindowsFormsAppHospital.my_appointmentsDataSetTableAdapters.vw_my_appointmentsTableAdapter();
             this.vw_my_appointmentsTableAdapter1 = new WindowsFormsAppHospital.hdb1103DataSetTableAdapters.vw_my_appointmentsTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.TSM_Exit = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_my_appointments)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vwmyappointmentsBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hdb1103DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vwmyappointmentsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.my_appointmentsDataSet)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_zapis_na_priem
@@ -66,7 +69,7 @@
             this.btn_zapis_na_priem.Location = new System.Drawing.Point(36, 156);
             this.btn_zapis_na_priem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_zapis_na_priem.Name = "btn_zapis_na_priem";
-            this.btn_zapis_na_priem.Size = new System.Drawing.Size(253, 82);
+            this.btn_zapis_na_priem.Size = new System.Drawing.Size(240, 82);
             this.btn_zapis_na_priem.TabIndex = 0;
             this.btn_zapis_na_priem.Text = "Запись на приём";
             this.btn_zapis_na_priem.UseVisualStyleBackColor = true;
@@ -75,7 +78,7 @@
             // lbl_hello
             // 
             this.lbl_hello.AutoSize = true;
-            this.lbl_hello.Location = new System.Drawing.Point(33, 33);
+            this.lbl_hello.Location = new System.Drawing.Point(33, 44);
             this.lbl_hello.Name = "lbl_hello";
             this.lbl_hello.Size = new System.Drawing.Size(107, 16);
             this.lbl_hello.TabIndex = 1;
@@ -84,7 +87,7 @@
             // lbl_you_are
             // 
             this.lbl_you_are.AutoSize = true;
-            this.lbl_you_are.Location = new System.Drawing.Point(35, 69);
+            this.lbl_you_are.Location = new System.Drawing.Point(33, 69);
             this.lbl_you_are.Name = "lbl_you_are";
             this.lbl_you_are.Size = new System.Drawing.Size(100, 16);
             this.lbl_you_are.TabIndex = 2;
@@ -95,7 +98,7 @@
             this.btn_admin_func.Location = new System.Drawing.Point(36, 361);
             this.btn_admin_func.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_admin_func.Name = "btn_admin_func";
-            this.btn_admin_func.Size = new System.Drawing.Size(253, 82);
+            this.btn_admin_func.Size = new System.Drawing.Size(240, 82);
             this.btn_admin_func.TabIndex = 3;
             this.btn_admin_func.Text = "Админ - панель";
             this.btn_admin_func.UseVisualStyleBackColor = true;
@@ -106,7 +109,7 @@
             this.btn_doctor_func.Location = new System.Drawing.Point(36, 465);
             this.btn_doctor_func.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_doctor_func.Name = "btn_doctor_func";
-            this.btn_doctor_func.Size = new System.Drawing.Size(253, 82);
+            this.btn_doctor_func.Size = new System.Drawing.Size(240, 82);
             this.btn_doctor_func.TabIndex = 4;
             this.btn_doctor_func.Text = "Доктор - панель";
             this.btn_doctor_func.UseVisualStyleBackColor = true;
@@ -117,7 +120,7 @@
             this.btn_my_appointments.Location = new System.Drawing.Point(36, 260);
             this.btn_my_appointments.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_my_appointments.Name = "btn_my_appointments";
-            this.btn_my_appointments.Size = new System.Drawing.Size(253, 82);
+            this.btn_my_appointments.Size = new System.Drawing.Size(240, 82);
             this.btn_my_appointments.TabIndex = 5;
             this.btn_my_appointments.Text = "Мои записи";
             this.btn_my_appointments.UseVisualStyleBackColor = true;
@@ -154,14 +157,14 @@
             this.patientidDataGridViewTextBoxColumn,
             this.doctoridDataGridViewTextBoxColumn});
             this.dgv_my_appointments.DataSource = this.vwmyappointmentsBindingSource1;
-            this.dgv_my_appointments.Location = new System.Drawing.Point(309, 33);
+            this.dgv_my_appointments.Location = new System.Drawing.Point(308, 69);
             this.dgv_my_appointments.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_my_appointments.Name = "dgv_my_appointments";
             this.dgv_my_appointments.ReadOnly = true;
             this.dgv_my_appointments.RowHeadersVisible = false;
             this.dgv_my_appointments.RowHeadersWidth = 51;
             this.dgv_my_appointments.RowTemplate.Height = 24;
-            this.dgv_my_appointments.Size = new System.Drawing.Size(893, 518);
+            this.dgv_my_appointments.Size = new System.Drawing.Size(894, 482);
             this.dgv_my_appointments.TabIndex = 7;
             // 
             // aidDataGridViewTextBoxColumn
@@ -287,11 +290,29 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(306, 9);
+            this.label1.Location = new System.Drawing.Point(305, 44);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 16);
             this.label1.TabIndex = 8;
             this.label1.Text = "Мои записи:";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TSM_Exit});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1217, 28);
+            this.menuStrip1.TabIndex = 9;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // TSM_Exit
+            // 
+            this.TSM_Exit.Name = "TSM_Exit";
+            this.TSM_Exit.Size = new System.Drawing.Size(151, 26);
+            this.TSM_Exit.Text = "Выйти из аккаунта";
+            this.TSM_Exit.Click += new System.EventHandler(this.TSM_Exit_Click);
             // 
             // FormAccount
             // 
@@ -308,6 +329,7 @@
             this.Controls.Add(this.lbl_you_are);
             this.Controls.Add(this.lbl_hello);
             this.Controls.Add(this.btn_zapis_na_priem);
+            this.Controls.Add(this.menuStrip1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormAccount";
             this.Text = "Личный Кабинет";
@@ -317,6 +339,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.hdb1103DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vwmyappointmentsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.my_appointmentsDataSet)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -349,5 +373,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn patientidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn doctoridDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem TSM_Exit;
     }
 }
