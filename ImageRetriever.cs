@@ -43,7 +43,7 @@ namespace WindowsFormsAppHospital
             }
         }
 
-        public int GetDoctorUiD(int doctor_id)
+         public int GetDoctorUiD(int doctor_id)
         {
             int temp=-1;
             try

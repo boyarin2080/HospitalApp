@@ -45,7 +45,7 @@ namespace WindowsFormsAppHospital
 
                         conn.Open();
                         int rowsAffected = cmd.ExecuteNonQuery();
-                        MessageBox.Show($"Пользователь добавлен. Строк затронуто: {rowsAffected}");
+                        MessageBox.Show($"Вы успешно зарегистрировались!");
                         conn.Close();
                         this.Close();
                     }

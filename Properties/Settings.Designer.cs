@@ -26,7 +26,7 @@ namespace WindowsFormsAppHospital.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost\\SQLEXPRESS;Initial Catalog=hdb1103;Integrated Security=True" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost\\SQLEXPRESS;Initial Catalog=hdb1304;Integrated Security=True" +
             ";Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Encryp" +
             "t=True;TrustServerCertificate=True;")]
         public string shamin_hospitalConnectionString {

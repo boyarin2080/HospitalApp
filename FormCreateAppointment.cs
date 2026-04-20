@@ -34,7 +34,7 @@ namespace WindowsFormsAppHospital
                 MessageBox.Show("Неверный формат даты");
             }
 
-            DialogResult result = MessageBox.Show($"Запись на время: {pv1.appointment_datetime} \nВрач: {pv1.doctor_fio} \ndoctor_id = {pv1.doctor_id} \npatient_id = {pv1.user_id}?", "Подтверждение записи", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show($"Подтверждаете запись на время: \n {pv1.appointment_datetime} \nВрач: {pv1.doctor_fio} ?", "Подтверждение записи", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (result == DialogResult.OK)
             {
                 try
